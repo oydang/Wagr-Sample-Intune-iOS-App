@@ -129,7 +129,7 @@
 }
 
 -(void) updateMoneyEarned {
-    double wagePerSecond = hourlyWage / 60.0;
+    double wagePerSecond = hourlyWage / 3600.0;
     
     moneyEarned = wagePerSecond * elapsedTime;
     
