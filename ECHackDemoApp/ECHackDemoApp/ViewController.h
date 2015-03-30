@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *onClockButtonPressed;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
 
 @end
 
