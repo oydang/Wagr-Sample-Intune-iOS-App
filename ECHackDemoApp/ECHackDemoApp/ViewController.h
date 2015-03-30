@@ -10,7 +10,10 @@
 
 @interface ViewController : UIViewController{
     NSTimeInterval pauseTimeInterval;
+    NSTimeInterval elapsedTime;
     BOOL timerRunning;
+    int moneyEarned;
+    int hourlyWage;
 }
 
 @property NSMutableDictionary *calendarData;
@@ -20,7 +23,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentMonthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentDateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *moneyMadeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *moneyMadeDollarsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *moneyMadeCentsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
 
 @property (strong, nonatomic) NSTimer *timeWorkedTimer; // Store the timer that fires after a certain time
