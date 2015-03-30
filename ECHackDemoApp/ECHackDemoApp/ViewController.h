@@ -13,6 +13,8 @@
     BOOL timerRunning;
 }
 
+@property NSMutableDictionary *calendarData;
+
 @property (weak, nonatomic) IBOutlet UIButton *onClockButtonPressed;
 @property (weak, nonatomic) IBOutlet UIButton *clockButton;
 
