@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property NSMutableDictionary *calendarData;
+
 @property (weak, nonatomic) IBOutlet UIButton *onClockButtonPressed;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
