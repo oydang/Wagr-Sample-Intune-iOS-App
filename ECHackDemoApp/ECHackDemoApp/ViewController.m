@@ -53,7 +53,7 @@
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
+    [dateFormatter setDateFormat:@"HH:mm:ss"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
