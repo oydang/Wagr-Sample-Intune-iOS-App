@@ -35,4 +35,7 @@
 }
 */
 
+- (IBAction)onLinkPressed:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://technet.microsoft.com/library/dn878028.aspx"]];
+}
 @end

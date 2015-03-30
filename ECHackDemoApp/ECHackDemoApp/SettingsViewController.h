@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsViewController : UIViewController
+- (IBAction)onLinkPressed:(id)sender;
 
 @end
