@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -29,9 +30,6 @@
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="63" y="253" width="274" height="94"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="63" y="286" width="274" height="94"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-d7-Mwf">
                                 <rect key="frame" x="200" y="357" width="201" height="69"/>
@@ -40,9 +38,6 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="63" y="355" width="274" height="58"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="63" y="390" width="274" height="69"/>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zer-u9-d5i" userLabel="DateView">
@@ -114,7 +109,7 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zer-u9-d5i" secondAttribute="trailing" id="WSS-gJ-kVW">
                                 <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                             </constraint>
-                            <constraint firstAttribute="centerY" secondItem="Bsx-VZ-Fro" secondAttribute="centerY" id="f72-rB-RKu"/>
+                            <constraint firstAttribute="centerY" secondItem="Bsx-VZ-Fro" secondAttribute="bottom" id="f72-rB-RKu"/>
                             <constraint firstAttribute="centerX" secondItem="Bsx-VZ-Fro" secondAttribute="centerX" id="gzb-U9-q4r"/>
                             <constraint firstItem="Zer-u9-d5i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="sTO-ZG-vWv"/>
                         </constraints>
@@ -124,7 +119,6 @@
                         <outlet property="currentDateLabel" destination="zJH-tZ-zO7" id="XU0-Sm-CbV"/>
                         <outlet property="currentMonthLabel" destination="YIk-Fe-zuw" id="TaW-Zv-v4b"/>
                         <outlet property="moneyMadeLabel" destination="mHa-d7-Mwf" id="Xkt-4b-vJK"/>
-                        <outlet property="onClockButtonPressed" destination="645-jf-INe" id="dBe-i6-Hv6"/>
                         <outlet property="timeWorkedLabel" destination="Bsx-VZ-Fro" id="ltw-GK-TyL"/>
                     </connections>
                 </viewController>
