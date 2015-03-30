@@ -23,6 +23,7 @@
     pauseTimeInterval = 0;
     [self loadCalendarData];
     
+    //In cents
     hourlyWage = 5000;
 }
 
@@ -113,18 +114,21 @@
     elapsedTime = [currentDate timeIntervalSinceDate:self.startDate];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
     
+    //Format the date to show Hours and Minutes
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
+    //Turn the timestamp from the timer into a string
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.timeWorkedLabel.text = timeString;
     pauseTimeInterval = elapsedTime;
     
+    //Grab the seconds from the timer
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    
     [df setDateFormat:@"ss"];
     
+    //If the time is odd, remove the : from the time, creating a blinking : effect
     if ([[df stringFromDate:timerDate] integerValue] % 2) {
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@":"
                                                                                          withString:@" "];
@@ -147,8 +151,6 @@
     NSString *userDataPath = [documentsPath stringByAppendingPathComponent:@"UserData.plist"];
     NSDictionary *userData = [NSDictionary dictionaryWithObject:self.calendarData forKey: @"calendar"];
     [userData writeToFile:userDataPath atomically:YES];
-    
-
 }
 
 @end
