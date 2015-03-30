@@ -56,7 +56,7 @@
     
 
     //when stop button pressed
-    //[self recordData:date hours:hours wage: wage]
+    //[self recordCalendarData:date hours:hours wage: wage]
     //[self saveCalendarData
 }
 
@@ -72,10 +72,11 @@
         userDataPath = [[NSBundle mainBundle] pathForResource:@"UserData" ofType:@"plist"];
     }
     
-    self.calendarData = [NSMutableDictionary dictionaryWithContentsOfFile:userDataPath];
+    NSDictionary *userData = [NSDictionary dictionaryWithContentsOfFile:userDataPath];
+    self.calendarData = [userData objectForKey:@"calendar"];
 }
 
-- (void) recordData: (NSString *)date hours:(double)hours wage:(double)wage {
+- (void) recordCalendarData: (NSString *)date hours:(double)hours wage:(double)wage {
     //When stop button is pressed, record new data to plist
     //date is NSString in format yyyymmdd
     //hours and wage are NSNumbers representing hours worked, and wage per hour
@@ -125,8 +126,8 @@
     NSArray *directoryPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [directoryPaths objectAtIndex:0];
     NSString *userDataPath = [documentsPath stringByAppendingPathComponent:@"UserData.plist"];
-    
-    [self.calendarData writeToFile:userDataPath atomically:YES];
+    NSDictionary *userData = [NSDictionary dictionaryWithObject:self.calendarData forKey: @"calendar"];
+    [userData writeToFile:userDataPath atomically:YES];
     
 
 }
