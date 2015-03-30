@@ -11,8 +11,13 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *onClockButtonPressed;
+@property (weak, nonatomic) IBOutlet UILabel *currentMonthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentDateLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *moneyMadeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *clockButton;
 
 @end
 

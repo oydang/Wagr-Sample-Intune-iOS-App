@@ -24,6 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)startClock:(UIButton *)sender {
+- (IBAction)onClockButtonPressed:(UIButton *)sender {
+    if ([self.clockButton.currentTitle isEqualToString:@"Clock In"]){
+        [self.clockButton setTitle:@"Clock Out" forState:UIControlStateNormal];
+    }
+    else{
+        [self.clockButton setTitle:@"Clock In" forState:UIControlStateNormal];
+    }
 }
 @end
