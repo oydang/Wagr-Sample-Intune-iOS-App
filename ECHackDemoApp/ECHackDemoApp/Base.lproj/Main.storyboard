@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,28 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsx-VZ-Fro">
-                                <rect key="frame" x="200" y="253" width="201" height="94"/>
+                                <rect key="frame" x="163" y="253" width="274" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="DaW-CJ-edl"/>
+                                    <constraint firstAttribute="width" constant="274" id="ctD-Q5-EKV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="80"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="100"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="63" y="253" width="274" height="94"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mHa-d7-Mwf">
-                                <rect key="frame" x="200" y="357" width="201" height="69"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="60"/>
+                                <rect key="frame" x="163" y="355" width="274" height="58"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="0.0" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="63" y="355" width="274" height="58"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
-                                <rect key="frame" x="218" y="515" width="166" height="65"/>
+                                <rect key="frame" x="188" y="515" width="225" height="65"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
                                 <state key="normal" title="Clock In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -51,17 +44,17 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zer-u9-d5i" userLabel="DateView">
-                                <rect key="frame" x="137" y="20" width="327" height="120"/>
+                                <rect key="frame" x="75" y="20" width="450" height="161"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="75" translatesAutoresizingMaskIntoConstraints="NO" id="YIk-Fe-zuw">
-                                        <rect key="frame" x="0.0" y="0.0" width="197" height="120"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="100"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIk-Fe-zuw">
+                                        <rect key="frame" x="0.0" y="0.0" width="276" height="161"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="140"/>
                                         <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="75" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-tZ-zO7">
-                                        <rect key="frame" x="217" y="0.0" width="112" height="120"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="100"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-tZ-zO7">
+                                        <rect key="frame" x="296" y="0.0" width="156" height="161"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="140"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -70,65 +63,41 @@
                                     <constraint firstAttribute="height" secondItem="YIk-Fe-zuw" secondAttribute="height" id="2fZ-D2-AIn"/>
                                     <constraint firstItem="zJH-tZ-zO7" firstAttribute="trailing" secondItem="Zer-u9-d5i" secondAttribute="trailingMargin" constant="10" id="A74-rQ-cvo"/>
                                     <constraint firstItem="YIk-Fe-zuw" firstAttribute="leading" secondItem="Zer-u9-d5i" secondAttribute="leading" id="FlZ-Wm-N8R"/>
-                                    <constraint firstItem="YIk-Fe-zuw" firstAttribute="height" secondItem="zJH-tZ-zO7" secondAttribute="height" id="IYF-aT-fqB"/>
-                                    <constraint firstItem="zJH-tZ-zO7" firstAttribute="height" secondItem="Zer-u9-d5i" secondAttribute="height" id="M4V-Dy-POh"/>
                                     <constraint firstItem="zJH-tZ-zO7" firstAttribute="bottom" secondItem="YIk-Fe-zuw" secondAttribute="bottom" id="MO7-Ft-9zI"/>
-                                    <constraint firstItem="zJH-tZ-zO7" firstAttribute="baseline" secondItem="YIk-Fe-zuw" secondAttribute="baseline" id="MUI-Wx-ggf"/>
                                     <constraint firstItem="zJH-tZ-zO7" firstAttribute="leading" secondItem="YIk-Fe-zuw" secondAttribute="trailing" constant="20" id="aED-M0-3Em"/>
                                     <constraint firstItem="YIk-Fe-zuw" firstAttribute="top" secondItem="Zer-u9-d5i" secondAttribute="top" id="wDg-Sc-AFi"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IYF-aT-fqB"/>
-                                        <exclude reference="MO7-Ft-9zI"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="IYF-aT-fqB"/>
-                                    </mask>
-                                </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
-                                <rect key="frame" x="217" y="515" width="166" height="65"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
-                                <state key="normal" title="Clock In">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onClockButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMC-nP-K2w"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mHa-d7-Mwf" firstAttribute="top" secondItem="Bsx-VZ-Fro" secondAttribute="bottom" constant="10" id="Fs0-PJ-etw"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="645-jf-INe" secondAttribute="bottom" constant="20" id="L8I-1U-sbD">
-                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
-                            </constraint>
+                            <constraint firstItem="mHa-d7-Mwf" firstAttribute="top" secondItem="Bsx-VZ-Fro" secondAttribute="bottom" constant="8" id="Fs0-PJ-etw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="645-jf-INe" secondAttribute="bottom" constant="20" id="L8I-1U-sbD"/>
                             <constraint firstAttribute="centerX" secondItem="Zer-u9-d5i" secondAttribute="centerX" id="P4i-T3-hMy"/>
-                            <constraint firstItem="Zer-u9-d5i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QGs-dv-XYQ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
-                            </constraint>
-                            <constraint firstItem="Zer-u9-d5i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="S6x-p3-2m3">
-                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
-                            </constraint>
+                            <constraint firstItem="Zer-u9-d5i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="QGs-dv-XYQ"/>
                             <constraint firstAttribute="centerX" secondItem="mHa-d7-Mwf" secondAttribute="centerX" id="UA7-VG-kdf"/>
                             <constraint firstAttribute="centerX" secondItem="645-jf-INe" secondAttribute="centerX" id="UiQ-lW-sZn"/>
                             <constraint firstItem="Bsx-VZ-Fro" firstAttribute="width" secondItem="mHa-d7-Mwf" secondAttribute="width" id="VxE-cW-dHR"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zer-u9-d5i" secondAttribute="trailing" id="WSS-gJ-kVW">
-                                <variation key="heightClass=regular-widthClass=compact" constant="15"/>
-                            </constraint>
-                            <constraint firstAttribute="centerY" secondItem="Bsx-VZ-Fro" secondAttribute="bottom" id="f72-rB-RKu"/>
+                            <constraint firstAttribute="width" secondItem="Zer-u9-d5i" secondAttribute="width" id="dO0-O3-YbE"/>
+                            <constraint firstItem="Zer-u9-d5i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dvM-6F-dpe"/>
+                            <constraint firstAttribute="centerY" secondItem="645-jf-INe" secondAttribute="centerY" constant="285" id="ekN-GJ-iNW"/>
+                            <constraint firstAttribute="centerY" secondItem="Bsx-VZ-Fro" secondAttribute="centerY" id="f72-rB-RKu"/>
                             <constraint firstAttribute="centerX" secondItem="Bsx-VZ-Fro" secondAttribute="centerX" id="gzb-U9-q4r"/>
-                            <constraint firstItem="Zer-u9-d5i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="sTO-ZG-vWv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="dO0-O3-YbE"/>
+                                <exclude reference="dvM-6F-dpe"/>
+                                <exclude reference="ekN-GJ-iNW"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="clockButton" destination="645-jf-INe" id="JCc-QZ-81m"/>
                         <outlet property="currentDateLabel" destination="zJH-tZ-zO7" id="XU0-Sm-CbV"/>
                         <outlet property="currentMonthLabel" destination="YIk-Fe-zuw" id="TaW-Zv-v4b"/>
                         <outlet property="moneyMadeLabel" destination="mHa-d7-Mwf" id="Xkt-4b-vJK"/>
+                        <outlet property="onClockButtonPressed" destination="645-jf-INe" id="dBe-i6-Hv6"/>
                         <outlet property="timeWorkedLabel" destination="Bsx-VZ-Fro" id="ltw-GK-TyL"/>
                     </connections>
                 </viewController>

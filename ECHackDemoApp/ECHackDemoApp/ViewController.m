@@ -11,13 +11,12 @@
 @interface ViewController ()
 
 @end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    timerRunning = NO;
-    pauseTimeInterval = 0;
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,51 +25,11 @@
 }
 
 - (IBAction)onClockButtonPressed:(UIButton *)sender {
-    if (!timerRunning){
-        [UIView performWithoutAnimation:^{
-            [self.clockButton setTitle:@"Clock Out" forState:UIControlStateNormal];
-        }];
-        
-        timerRunning = YES;
-        
-        self.startDate = [NSDate date] ;
-        self.startDate = [self.startDate dateByAddingTimeInterval:((-1)*(pauseTimeInterval))];
-        self.timeWorkedTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+    if ([self.clockButton.currentTitle isEqualToString:@"Clock In"]){
+        [self.clockButton setTitle:@"Clock Out" forState:UIControlStateNormal];
     }
     else{
-        [UIView performWithoutAnimation:^{
-            [self.clockButton setTitle:@"Clock In" forState:UIControlStateNormal];
-        }];
-        
-        timerRunning = NO;
-        [self.timeWorkedTimer invalidate];
-        self.timeWorkedTimer = nil;
-        [self updateTimer];
-    }
-}
-
--(void) updateTimer {
-    
-    NSDate *currentDate = [NSDate date];
-    
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-    
-    NSString *timeString = [dateFormatter stringFromDate:timerDate];
-    self.timeWorkedLabel.text = timeString;
-    pauseTimeInterval = timeInterval;
-
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    
-    [df setDateFormat:@"ss"];
-    
-    if ([[df stringFromDate:timerDate] integerValue] % 2) {
-        self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@":"
-                                             withString:@" "];
+        [self.clockButton setTitle:@"Clock In" forState:UIControlStateNormal];
     }
 }
 @end
