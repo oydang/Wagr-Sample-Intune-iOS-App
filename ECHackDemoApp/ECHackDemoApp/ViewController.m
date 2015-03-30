@@ -46,7 +46,7 @@
         
         self.startDate = [NSDate date] ;
         self.startDate = [self.startDate dateByAddingTimeInterval:((-1)*(pauseTimeInterval))];
-        self.timeWorkedTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+        self.timeWorkedTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
     }
     else{
         [UIView performWithoutAnimation:^{
@@ -62,7 +62,7 @@
         [self.timeWorkedTimer invalidate];
         self.timeWorkedTimer = nil;
         
-        [self updateTimer];
+        [self updateUI];
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@" "
                                                                                          withString:@":"];
     }
@@ -70,13 +70,18 @@
 
 }
 
+- (void) updateUI {
+    [self updateTimer];
+    [self updateMoneyEarned];
+}
+
 
 -(void) updateTimer {
     
     NSDate *currentDate = [NSDate date];
     
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    elapsedTime = [currentDate timeIntervalSinceDate:self.startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
     
     //Format the date to show Hours and Minutes
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -86,7 +91,7 @@
     //Turn the timestamp from the timer into a string
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.timeWorkedLabel.text = timeString;
-    pauseTimeInterval = timeInterval;
+    pauseTimeInterval = elapsedTime;
     
     //Grab the seconds from the timer
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
