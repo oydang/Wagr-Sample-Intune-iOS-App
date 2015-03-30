@@ -55,9 +55,7 @@
         
         
         timerRunning = NO;
-        //hardcoding wage for now.
-        double wage = 15;
-        [self.calendarData recordCalendarData:self.startDate wage:wage timeWorked:self.timeWorkedLabel.text];
+        [self.calendarData recordCalendarData:self.startDate wage:hourlyWage timeWorked:self.timeWorkedLabel.text];
         [self.calendarData saveCalendarData];
         [self.timeWorkedTimer invalidate];
         self.timeWorkedTimer = nil;

@@ -74,7 +74,38 @@
     NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:userData format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
     
     [plistData writeToFile:userDataPath atomically:YES];
+    [self getFileForExport];
+}
+
+- (NSString*) getFileForExport {
+    //convert data to a file for excel.
     
+
+    NSMutableString* fileData = [NSMutableString stringWithString:@""];
+
+    for(id key in self.calendarDictionary) {
+        id value = [self.calendarDictionary objectForKey:key];
+        [fileData appendString:key];
+        [fileData appendString:@", "];
+        NSString* hours = [value[0] descriptionWithLocale:nil];
+        [fileData appendString:hours];
+        [fileData appendString:@", "];
+        NSString* wage = [value[1] descriptionWithLocale:nil];
+        [fileData appendString:wage];
+        [fileData appendString:@"\n"];
+        
+    }
+    //NSLog(fileData);
+
+    NSString* filepath;
+    NSError *error;
+    NSArray *directoryPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsPath = [directoryPaths objectAtIndex:0];
+    filepath = [documentsPath stringByAppendingPathComponent:@"data.csv"];
+    
+    [fileData writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+
+    return filepath;
 }
 
 @end
