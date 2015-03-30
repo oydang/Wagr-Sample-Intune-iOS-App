@@ -21,10 +21,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     timerRunning = NO;
     pauseTimeInterval = 0;
+<<<<<<< Updated upstream
     [self loadCalendarData];
     
     //In cents
     hourlyWage = 5000;
+=======
+    calendarData = [[CalendarData alloc] init];
+>>>>>>> Stashed changes
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +55,12 @@
             [self.clockButton setTitle:@"Clock In" forState:UIControlStateNormal];
         }];
         
+        
         timerRunning = NO;
+        //hardcoding wage for now.
+        double wage = 15;
+        [self.calendarData recordCalendarData:self.startDate wage:wage timeWorked:self.timeWorkedLabel.text];
+        [self.calendarData saveCalendarData];
         [self.timeWorkedTimer invalidate];
         self.timeWorkedTimer = nil;
         
@@ -61,46 +70,8 @@
     }
     
 
-    //when stop button pressed
-    //[self recordCalendarData:date hours:hours wage: wage]
-    //[self saveCalendarData
 }
 
-- (void) loadCalendarData{
-    //Find calendar data in plist file and load to calendar dictionary.
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSArray *directoryPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [directoryPaths objectAtIndex:0];
-    NSString *userDataPath = [documentsPath stringByAppendingPathComponent:@"UserData.plist"];
-    
-    //look for plist in documents, if not there, retrieve from mainBundle
-    if (![fileManager fileExistsAtPath:userDataPath]){
-        userDataPath = [[NSBundle mainBundle] pathForResource:@"UserData" ofType:@"plist"];
-    }
-    
-    NSDictionary *userData = [NSDictionary dictionaryWithContentsOfFile:userDataPath];
-    self.calendarData = [userData objectForKey:@"calendar"];
-}
-
-- (void) recordCalendarData: (NSString *)date hours:(double)hours wage:(double)wage {
-    //When stop button is pressed, record new data to plist
-    //date is NSString in format yyyymmdd
-    //hours and wage are NSNumbers representing hours worked, and wage per hour
-    //NOTE: 1 wage per day. Currently new wage will not override.
-    
-    //get existing data for today's date
-    NSArray *existingData;
-    existingData=[self.calendarData objectForKey:date];
-    if (existingData != nil){
-        hours = hours+[existingData[0] doubleValue];
-        wage = wage+[existingData[1] doubleValue];
-    }
-    //create new array with today's data
-    existingData = [NSArray arrayWithObjects: [NSNumber numberWithDouble:hours], [NSNumber numberWithDouble:wage], nil];
-    
-    //add array back to calendar
-    [self.calendarData setObject:existingData forKey:date];
-}
 
 -(void) updateTimer {
     
@@ -130,6 +101,7 @@
     }
 }
 
+<<<<<<< Updated upstream
 -(void) updateMoneyEarned {
     double wagePerSecond = hourlyWage / 3600.0;
     
@@ -148,4 +120,6 @@
     [userData writeToFile:userDataPath atomically:YES];
 }
 
+=======
+>>>>>>> Stashed changes
 @end

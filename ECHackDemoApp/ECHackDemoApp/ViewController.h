@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CalendarData.h"
 
 @interface ViewController : UIViewController{
     NSTimeInterval pauseTimeInterval;
@@ -16,7 +17,7 @@
     int hourlyWage;
 }
 
-@property NSMutableDictionary *calendarData;
+@property CalendarData *calendarData; //NSMutableDictionary *calendarData;
 
 @property (weak, nonatomic) IBOutlet UIButton *onClockButtonPressed;
 @property (weak, nonatomic) IBOutlet UIButton *clockButton;
