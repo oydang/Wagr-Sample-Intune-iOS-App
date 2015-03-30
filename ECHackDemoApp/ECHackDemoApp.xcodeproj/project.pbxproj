@@ -171,6 +171,7 @@
 				TargetAttributes = {
 					82251AF71AC989B7001F6DD4 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = UBF8T346G9;
 					};
 					82251B131AC989B7001F6DD4 = {
 						CreatedOnToolsVersion = 6.2;
@@ -418,6 +419,7 @@
 				82251B201AC989B7001F6DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "ECHackDemoAppTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +428,7 @@
 				82251B231AC989B7001F6DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
