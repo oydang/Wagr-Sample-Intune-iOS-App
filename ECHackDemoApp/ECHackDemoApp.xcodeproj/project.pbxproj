@@ -11,6 +11,8 @@
 		1D392E791AC9B1E700859A02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D392E781AC9B1E700859A02 /* QuartzCore.framework */; };
 		1D392E7E1AC9B31E00859A02 /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D392E7D1AC9B31E00859A02 /* ReportsViewController.m */; };
 		1D392E811AC9C1AE00859A02 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D392E801AC9C1AE00859A02 /* Accelerate.framework */; };
+		2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */; };
+		2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1AA1ACA030D00C6EB6D /* Settings.m */; };
 		82251AFE1AC989B7001F6DD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251AFD1AC989B7001F6DD4 /* main.m */; };
 		82251B011AC989B7001F6DD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B001AC989B7001F6DD4 /* AppDelegate.m */; };
 		82251B041AC989B7001F6DD4 /* ECHackDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82251B021AC989B7001F6DD4 /* ECHackDemoApp.xcdatamodeld */; };
@@ -116,6 +118,10 @@
 		1D392E7C1AC9B31E00859A02 /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
 		1D392E7D1AC9B31E00859A02 /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
 		1D392E801AC9C1AE00859A02 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		2A7DC1A61ACA026D00C6EB6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		2A7DC1A91ACA030D00C6EB6D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		2A7DC1AA1ACA030D00C6EB6D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		82251AF81AC989B7001F6DD4 /* ECHackDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECHackDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82251AFC1AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82251AFD1AC989B7001F6DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -277,6 +283,10 @@
 				82251B001AC989B7001F6DD4 /* AppDelegate.m */,
 				82251B051AC989B7001F6DD4 /* ViewController.h */,
 				82251B061AC989B7001F6DD4 /* ViewController.m */,
+				2A7DC1A61ACA026D00C6EB6D /* SettingsViewController.h */,
+				2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */,
+				2A7DC1A91ACA030D00C6EB6D /* Settings.h */,
+				2A7DC1AA1ACA030D00C6EB6D /* Settings.m */,
 				82251B081AC989B7001F6DD4 /* Main.storyboard */,
 				82251B0B1AC989B7001F6DD4 /* Images.xcassets */,
 				82251B0D1AC989B7001F6DD4 /* LaunchScreen.xib */,
@@ -419,8 +429,10 @@
 				82251B011AC989B7001F6DD4 /* AppDelegate.m in Sources */,
 				82251AFE1AC989B7001F6DD4 /* main.m in Sources */,
 				82251B071AC989B7001F6DD4 /* ViewController.m in Sources */,
+				2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */,
 				82251B041AC989B7001F6DD4 /* ECHackDemoApp.xcdatamodeld in Sources */,
 				1D392E7E1AC9B31E00859A02 /* ReportsViewController.m in Sources */,
+				2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
