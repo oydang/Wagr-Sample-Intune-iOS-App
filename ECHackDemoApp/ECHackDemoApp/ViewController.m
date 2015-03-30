@@ -53,7 +53,10 @@
         timerRunning = NO;
         [self.timeWorkedTimer invalidate];
         self.timeWorkedTimer = nil;
+        
         [self updateTimer];
+        self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@" "
+                                                                                         withString:@":"];
     }
     
 
