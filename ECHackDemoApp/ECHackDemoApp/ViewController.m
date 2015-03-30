@@ -21,14 +21,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     timerRunning = NO;
     pauseTimeInterval = 0;
-<<<<<<< Updated upstream
-    [self loadCalendarData];
-    
     //In cents
     hourlyWage = 5000;
-=======
+
     calendarData = [[CalendarData alloc] init];
->>>>>>> Stashed changes
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +98,7 @@
     }
 }
 
-<<<<<<< Updated upstream
+
 -(void) updateMoneyEarned {
     double wagePerSecond = hourlyWage / 3600.0;
     
@@ -111,15 +108,5 @@
     self.moneyMadeDollarsLabel.text = [NSString stringWithFormat:@"%d", (moneyEarned / 100)];
 }
 
-- (void) saveCalendarData {
-    //Save calendar back to plist in documents
-    NSArray *directoryPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [directoryPaths objectAtIndex:0];
-    NSString *userDataPath = [documentsPath stringByAppendingPathComponent:@"UserData.plist"];
-    NSDictionary *userData = [NSDictionary dictionaryWithObject:self.calendarData forKey: @"calendar"];
-    [userData writeToFile:userDataPath atomically:YES];
-}
 
-=======
->>>>>>> Stashed changes
 @end
