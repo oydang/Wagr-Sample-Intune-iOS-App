@@ -22,6 +22,9 @@
     timerRunning = NO;
     pauseTimeInterval = 0;
     [self loadCalendarData];
+    
+    //In cents
+    hourlyWage = 5000;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,7 +54,10 @@
         timerRunning = NO;
         [self.timeWorkedTimer invalidate];
         self.timeWorkedTimer = nil;
+        
         [self updateTimer];
+        self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@" "
+                                                                                         withString:@":"];
     }
     
 
@@ -103,22 +109,34 @@
     NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
     
+    //Format the date to show Hours and Minutes
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
+    //Turn the timestamp from the timer into a string
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.timeWorkedLabel.text = timeString;
     pauseTimeInterval = timeInterval;
     
+    //Grab the seconds from the timer
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    
     [df setDateFormat:@"ss"];
     
+    //If the time is odd, remove the : from the time, creating a blinking : effect
     if ([[df stringFromDate:timerDate] integerValue] % 2) {
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@":"
                                                                                          withString:@" "];
     }
+}
+
+-(void) updateMoneyEarned {
+    double wagePerSecond = hourlyWage / 3600.0;
+    
+    moneyEarned = wagePerSecond * elapsedTime;
+    
+    self.moneyMadeCentsLabel.text = [NSString stringWithFormat:@"%02d", (moneyEarned % 100)];
+    self.moneyMadeDollarsLabel.text = [NSString stringWithFormat:@"%d", (moneyEarned / 100)];
 }
 
 - (void) saveCalendarData {
@@ -128,8 +146,6 @@
     NSString *userDataPath = [documentsPath stringByAppendingPathComponent:@"UserData.plist"];
     NSDictionary *userData = [NSDictionary dictionaryWithObject:self.calendarData forKey: @"calendar"];
     [userData writeToFile:userDataPath atomically:YES];
-    
-
 }
 
 @end
