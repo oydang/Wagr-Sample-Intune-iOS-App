@@ -8,16 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    NSTimeInterval pauseTimeInterval;
+    BOOL timerRunning;
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *onClockButtonPressed;
-@property (weak, nonatomic) IBOutlet UILabel *currentMonthLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentDateLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *moneyMadeLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
 @property (weak, nonatomic) IBOutlet UIButton *clockButton;
 
-@end
+@property (weak, nonatomic) IBOutlet UILabel *currentMonthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *moneyMadeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
 
+@property (strong, nonatomic) NSTimer *timeWorkedTimer; // Store the timer that fires after a certain time
+@property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button
+
+
+@end
