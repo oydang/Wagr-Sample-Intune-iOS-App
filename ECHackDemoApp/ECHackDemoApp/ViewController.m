@@ -22,6 +22,8 @@
     timerRunning = NO;
     pauseTimeInterval = 0;
     [self loadCalendarData];
+    
+    hourlyWage = 5000;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +43,7 @@
         
         self.startDate = [NSDate date] ;
         self.startDate = [self.startDate dateByAddingTimeInterval:((-1)*(pauseTimeInterval))];
-        self.timeWorkedTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+        self.timeWorkedTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
     }
     else{
         [UIView performWithoutAnimation:^{
@@ -96,12 +98,17 @@
     [self.calendarData setObject:existingData forKey:date];
 }
 
+-(void) updateUI {
+    [self updateTimer];
+    [self updateMoneyEarned];
+}
+
 -(void) updateTimer {
     
     NSDate *currentDate = [NSDate date];
     
-    NSTimeInterval timeInterval = [currentDate timeIntervalSinceDate:self.startDate];
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+    elapsedTime = [currentDate timeIntervalSinceDate:self.startDate];
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:elapsedTime];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
@@ -109,7 +116,7 @@
     
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
     self.timeWorkedLabel.text = timeString;
-    pauseTimeInterval = timeInterval;
+    pauseTimeInterval = elapsedTime;
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     
@@ -119,6 +126,15 @@
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@":"
                                                                                          withString:@" "];
     }
+}
+
+-(void) updateMoneyEarned {
+    double wagePerSecond = hourlyWage / 60.0;
+    
+    moneyEarned = wagePerSecond * elapsedTime;
+    
+    self.moneyMadeCentsLabel.text = [NSString stringWithFormat:@"%02d", (moneyEarned % 100)];
+    self.moneyMadeDollarsLabel.text = [NSString stringWithFormat:@"%d", (moneyEarned / 100)];
 }
 
 - (void) saveCalendarData {
