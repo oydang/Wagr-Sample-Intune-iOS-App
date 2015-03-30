@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X51-Hn-PCs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6az-Xd-FxY">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -7,10 +7,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Timer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController title="Timer" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -97,7 +97,7 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
                                 <rect key="frame" x="217" y="510" width="166" height="65"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
                                 <state key="normal" title="Clock In">
@@ -141,6 +141,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Timer" image="Watch-25" id="kyM-eo-LOU"/>
                     <connections>
                         <outlet property="clockButton" destination="645-jf-INe" id="JCc-QZ-81m"/>
                         <outlet property="currentDateLabel" destination="zJH-tZ-zO7" id="XU0-Sm-CbV"/>
@@ -153,8 +154,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="355" y="128"/>
         </scene>
-        <!--Reports View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="g2E-V7-9aN">
+            <objects>
+                <tabBarController id="6az-Xd-FxY" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="kdQ-sg-w7j">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="dh2-77-QQg"/>
+                        <segue destination="X51-Hn-PCs" kind="relationship" relationship="viewControllers" id="UU2-fs-kxL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PMM-QT-6gS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-400" y="614"/>
+        </scene>
+        <!--Results-->
         <scene sceneID="vYA-eW-kpY">
             <objects>
                 <viewController id="X51-Hn-PCs" customClass="ReportsViewController" sceneMemberID="viewController">
@@ -211,13 +232,18 @@
                             <constraint firstAttribute="trailing" secondItem="Iti-dL-Zve" secondAttribute="trailing" id="xK6-G1-psv"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Results" image="Line Chart-25" id="VWw-aI-jUH"/>
                     <connections>
                         <outlet property="resultsScatterPlot" destination="PnA-px-IT3" id="XbZ-5l-bQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPJ-Lz-rw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="394" y="1075"/>
+            <point key="canvasLocation" x="302" y="963"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Line Chart-25" width="25" height="25"/>
+        <image name="Watch-25" width="25" height="25"/>
+    </resources>
 </document>
