@@ -97,7 +97,6 @@
                         <outlet property="currentDateLabel" destination="zJH-tZ-zO7" id="XU0-Sm-CbV"/>
                         <outlet property="currentMonthLabel" destination="YIk-Fe-zuw" id="TaW-Zv-v4b"/>
                         <outlet property="moneyMadeLabel" destination="mHa-d7-Mwf" id="Xkt-4b-vJK"/>
-                        <outlet property="onClockButtonPressed" destination="645-jf-INe" id="dBe-i6-Hv6"/>
                         <outlet property="timeWorkedLabel" destination="Bsx-VZ-Fro" id="ltw-GK-TyL"/>
                     </connections>
                 </viewController>
