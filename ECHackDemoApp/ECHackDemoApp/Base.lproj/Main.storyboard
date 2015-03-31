@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="-400" y="614"/>
         </scene>
-        <!--Results-->
+        <!--Reports-->
         <scene sceneID="vYA-eW-kpY">
             <objects>
                 <viewController id="X51-Hn-PCs" customClass="ReportsViewController" sceneMemberID="viewController">
@@ -190,19 +190,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-XO-XI0" userLabel="Results Label">
-                                <rect key="frame" x="198" y="28" width="205" height="110"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="Fx2-on-b6J"/>
-                                    <constraint firstAttribute="width" constant="205" id="t35-f1-jae"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="70"/>
-                                <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AoD-01-TV5" userLabel="Header Divider">
                                 <rect key="frame" x="42" y="137" width="517" height="1"/>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="wKC-sZ-7St"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iti-dL-Zve" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="156" width="600" height="424"/>
@@ -220,6 +213,22 @@
                                     <constraint firstAttribute="bottom" secondItem="PnA-px-IT3" secondAttribute="bottom" constant="24" id="fB3-Cv-OGJ"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reports" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-XO-XI0" userLabel="Results Label">
+                                <rect key="frame" x="191" y="28" width="220" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Fx2-on-b6J"/>
+                                    <constraint firstAttribute="width" constant="205" id="t35-f1-jae"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="70"/>
+                                <color key="textColor" red="0.80000000000000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Fx2-on-b6J"/>
+                                        <exclude reference="t35-f1-jae"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -235,7 +244,7 @@
                             <constraint firstAttribute="trailing" secondItem="Iti-dL-Zve" secondAttribute="trailing" id="xK6-G1-psv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Results" image="Line Chart-25" id="VWw-aI-jUH"/>
+                    <tabBarItem key="tabBarItem" title="Reports" image="Line Chart-25" id="VWw-aI-jUH"/>
                     <connections>
                         <outlet property="resultsScatterPlot" destination="PnA-px-IT3" id="XbZ-5l-bQX"/>
                     </connections>
