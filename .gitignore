@@ -11,3 +11,5 @@ ECHackDemoApp/ECHackDemoApp.xcodeproj/project.xcworkspace/xcuserdata/petebiencou
 ECHackDemoApp/ECHackDemoApp.xcodeproj/project.pbxproj
 
 *.xcuserstate
+
+*.xcworkspace
