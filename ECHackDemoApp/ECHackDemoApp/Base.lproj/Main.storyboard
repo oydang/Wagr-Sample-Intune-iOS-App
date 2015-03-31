@@ -362,9 +362,19 @@
                                     <rect key="frame" x="150" y="500" width="96" height="46"/>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs5-0G-jqj">
+                                <rect key="frame" x="26" y="312" width="548" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Wagr is a demo app developed by Microsoft to showcase the App Wrapping Tool for iOS. You may want to copy and paste this text to test app policies.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="26" y="674" width="348" height="67"/>
+                                </variation>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vg3-HL-M15">
-                                <rect key="frame" x="103" y="332" width="394" height="33"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <rect key="frame" x="147" y="512" width="306" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <state key="normal" title="Learn More about the App Wrapping Tool for iOS">
                                     <color key="titleColor" red="0.0" green="0.34940811835421837" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -376,16 +386,6 @@
                                     <action selector="onLinkPressed:" destination="y4V-x3-yQn" eventType="touchUpInside" id="YSN-AS-tlh"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fs5-0G-jqj">
-                                <rect key="frame" x="26" y="385" width="548" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Wagr is a demo app developed by Microsoft to showcase the App Wrapping Tool for iOS. You may want to copy and paste this text to test app policies.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
-                                    <rect key="frame" x="26" y="674" width="348" height="67"/>
-                                </variation>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -400,9 +400,11 @@
                             <constraint firstItem="6sw-dE-vaq" firstAttribute="baseline" secondItem="FJ4-cG-dV7" secondAttribute="baseline" id="Eq6-aA-WmD"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="fs5-0G-jqj" secondAttribute="trailing" constant="10" id="EwZ-e1-1Cj"/>
                             <constraint firstAttribute="centerX" secondItem="fs5-0G-jqj" secondAttribute="centerX" id="Fc1-w1-p4y"/>
+                            <constraint firstItem="Fbf-SB-0af" firstAttribute="top" secondItem="vg3-HL-M15" secondAttribute="bottom" constant="10" id="H4d-X9-Zh2"/>
                             <constraint firstAttribute="centerX" secondItem="vg3-HL-M15" secondAttribute="centerX" id="Hia-9n-iVg"/>
                             <constraint firstItem="qnO-uX-2rJ" firstAttribute="top" secondItem="b2z-Yo-KI2" secondAttribute="bottom" constant="5" id="NrB-1e-isd"/>
                             <constraint firstItem="iVk-BD-oGk" firstAttribute="leading" secondItem="MPx-Na-QMl" secondAttribute="trailing" constant="10" id="PAA-5z-QU1"/>
+                            <constraint firstItem="vg3-HL-M15" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fs5-0G-jqj" secondAttribute="bottom" constant="10" id="R0q-2U-3sy"/>
                             <constraint firstItem="4Pf-bC-I08" firstAttribute="baseline" secondItem="6sw-dE-vaq" secondAttribute="baseline" id="STN-Ek-lPa"/>
                             <constraint firstItem="b2z-Yo-KI2" firstAttribute="top" secondItem="3hY-cQ-jxL" secondAttribute="bottom" constant="20" id="TK5-Wd-0UM"/>
                             <constraint firstItem="6sw-dE-vaq" firstAttribute="leading" secondItem="4Pf-bC-I08" secondAttribute="trailing" id="X8i-VV-Ihw"/>
@@ -416,9 +418,16 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
                             <constraint firstItem="m1t-Tp-YEI" firstAttribute="leading" secondItem="MPx-Na-QMl" secondAttribute="leading" id="jxj-Ql-Ptk"/>
+                            <constraint firstItem="fs5-0G-jqj" firstAttribute="top" secondItem="FJ4-cG-dV7" secondAttribute="bottom" constant="20" id="mWm-md-LLT"/>
                             <constraint firstItem="m1t-Tp-YEI" firstAttribute="leading" secondItem="b2z-Yo-KI2" secondAttribute="leading" id="pmg-fB-kbD"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="vg3-HL-M15" secondAttribute="trailing" constant="15" id="xH6-cQ-5Qx"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Czg-Vd-Zqx"/>
+                                <exclude reference="7Sa-lP-u8r"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings-26" id="ehT-29-Fra"/>
                     <connections>
