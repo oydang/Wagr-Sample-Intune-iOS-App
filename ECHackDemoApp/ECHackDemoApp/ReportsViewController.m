@@ -16,6 +16,7 @@
 @property (nonatomic, strong) CPTXYGraph *graph;
 @property (nonatomic, strong) NSArray *dataForPlot;
 @property (nonatomic, strong) CalendarData *calendarData;
+@property (nonatomic, strong) UIDocumentInteractionController* controller;
 
 @end
 
@@ -188,6 +189,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+
 }
 
 #pragma mark -
@@ -343,9 +345,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller{
+    return self;
+}
+
 - (IBAction)onExportButtonPressed:(UIButton *)sender {
-    [[self.calendarData getDocumentInteractionController]
-     presentOptionsMenuFromRect:self.exportButton.frame
+    self.controller =[self.calendarData getDocumentInteractionController];
+    [self.controller setDelegate: self];
+    [self.controller presentOpenInMenuFromRect:self.exportButton.frame
                         inView:self.view
                       animated:YES];
 

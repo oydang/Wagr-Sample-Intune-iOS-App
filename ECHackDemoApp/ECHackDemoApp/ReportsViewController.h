@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "CorePlot-CocoaTouch.h"
 
-@interface ReportsViewController : UIViewController<CPTPlotDataSource>
+@interface ReportsViewController : UIViewController<CPTPlotDataSource, UIDocumentInteractionControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UIButton *exportButton;
 - (IBAction)onExportButtonPressed:(UIButton *)sender;

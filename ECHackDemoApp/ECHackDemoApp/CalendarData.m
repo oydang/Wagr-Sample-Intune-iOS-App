@@ -100,16 +100,12 @@
         [fileData appendString:@"\n"];
         
     }
-    //NSLog(fileData);
 
-    NSString* filePath;
     NSError *error;
-    NSArray *directoryPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsPath = [directoryPaths objectAtIndex:0];
-    filePath = [documentsPath stringByAppendingPathComponent:@"data.csv"];
+    NSString *fileName = @"data.csv";
+    NSString *filePath = [NSString stringWithFormat:@"%@/Documents/%@", NSHomeDirectory(), fileName];
     
     [fileData writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
-    //NSLog(filepath);
     return filePath;
 }
 
