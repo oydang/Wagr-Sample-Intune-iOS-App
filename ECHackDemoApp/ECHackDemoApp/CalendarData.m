@@ -7,7 +7,7 @@
 //
 
 #import "CalendarData.h"
-
+@import UIKit;
 
 @implementation CalendarData{
     
@@ -78,12 +78,12 @@
     NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:userData format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
     
     [plistData writeToFile:userDataPath atomically:YES];
-    [self getFileForExport];
+    NSString* filePath = [self getFileForExport];
+    [self saveDataFromFile:filePath];
 }
 
 - (NSString*) getFileForExport {
     //convert data to a file for excel.
-    
 
     NSMutableString* fileData = [NSMutableString stringWithString:@""];
 
@@ -101,15 +101,38 @@
     }
     //NSLog(fileData);
 
-    NSString* filepath;
+    NSString* filePath;
     NSError *error;
     NSArray *directoryPaths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsPath = [directoryPaths objectAtIndex:0];
-    filepath = [documentsPath stringByAppendingPathComponent:@"data.csv"];
+    filePath = [documentsPath stringByAppendingPathComponent:@"data.csv"];
     
-    [fileData writeToFile:filepath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    [fileData writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    //NSLog(filepath);
+    return filePath;
+}
 
-    return filepath;
+- (UIDocumentInteractionController*) getDocumentInteractionController {
+    NSString* filePath = [self getFileForExport];
+    NSURL *url = [[NSURL alloc] initWithString:filePath];
+    UIDocumentInteractionController* controller= [UIDocumentInteractionController interactionControllerWithURL:url];
+    return controller;
+}
+
+- (BOOL) saveDataFromFile: (NSString*) filePath{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *fileContents;
+    if ([fileManager fileExistsAtPath:filePath]){
+        fileContents = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    }else{
+        return false;
+    }
+    NSArray *rows = [fileContents componentsSeparatedByString: @"\n"];
+    
+    for(NSString* row in rows){
+        NSLog(@"row %@", row);
+    }
+    return true;
 }
 
 @end

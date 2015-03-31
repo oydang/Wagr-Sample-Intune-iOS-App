@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@import UIKit;
 @interface CalendarData : NSObject {
 
 }
@@ -16,4 +16,6 @@
 - (void) loadCalendarData;
 - (void) recordCalendarData: (NSDate*)date wage:(double)wage timeWorked: (NSString*)timeWorked;
 - (void) saveCalendarData;
+- (UIDocumentInteractionController*) getDocumentInteractionController;
+- (BOOL) saveDataFromFile: (NSString*) filePath;
 @end
