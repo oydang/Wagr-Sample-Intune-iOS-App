@@ -19,6 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    tap.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tap];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +44,7 @@
 - (IBAction)onLinkPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://technet.microsoft.com/library/dn878028.aspx"]];
 }
+
 - (IBAction)onDollarsWageEntered:(UITextField *)sender {
     dollarsInCents = [self.dollarWage.text intValue] * 100;
     if ((cents >= 0)&& (dollarsInCents >= 0)) {
@@ -55,5 +61,11 @@
         [Settings setHourlyWage:hourlyWage];
     }
     NSLog(@"Hourly Wage: %d", hourlyWage);
+}
+
+-(void)dismissKeyboard {
+    [self.userName resignFirstResponder];
+    [self.dollarWage resignFirstResponder];
+    [self.centsWage resignFirstResponder];
 }
 @end
