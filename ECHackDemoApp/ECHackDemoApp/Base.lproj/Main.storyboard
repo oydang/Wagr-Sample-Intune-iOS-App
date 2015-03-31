@@ -97,8 +97,8 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
-                                <rect key="frame" x="217" y="510" width="166" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
+                                <rect key="frame" x="217" y="461" width="166" height="65"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="45"/>
                                 <state key="normal" title="Clock In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -146,8 +146,10 @@
                         <outlet property="clockButton" destination="645-jf-INe" id="JCc-QZ-81m"/>
                         <outlet property="currentDateLabel" destination="zJH-tZ-zO7" id="XU0-Sm-CbV"/>
                         <outlet property="currentMonthLabel" destination="YIk-Fe-zuw" id="TaW-Zv-v4b"/>
+                        <outlet property="dayLabel" destination="zJH-tZ-zO7" id="CDj-1a-cer"/>
                         <outlet property="moneyMadeCentsLabel" destination="oVg-BQ-pR0" id="FyA-Zj-iAC"/>
                         <outlet property="moneyMadeDollarsLabel" destination="jKI-7K-lDP" id="kAC-ko-cdw"/>
+                        <outlet property="monthLabel" destination="YIk-Fe-zuw" id="HYW-i1-Rqo"/>
                         <outlet property="onClockButtonPressed" destination="645-jf-INe" id="z0U-QX-XmO"/>
                         <outlet property="timeWorkedLabel" destination="Bsx-VZ-Fro" id="ltw-GK-TyL"/>
                     </connections>

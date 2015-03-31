@@ -23,7 +23,16 @@
     timerRunning = NO;
     pauseTimeInterval = 0;
     calendarData = [[CalendarData alloc] init];
-
+    
+    NSDate *now = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM"];
+    
+    self.monthLabel.text = [[formatter stringFromDate:now] uppercaseString];
+    
+    [formatter setDateFormat:@"d"];
+    self.dayLabel.text = [formatter stringFromDate:now];
+    
 }
 
 - (void)didReceiveMemoryWarning {
