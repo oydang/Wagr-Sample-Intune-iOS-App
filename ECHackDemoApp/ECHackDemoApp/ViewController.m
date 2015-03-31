@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Settings.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -32,6 +33,10 @@
     
     [formatter setDateFormat:@"d"];
     self.dayLabel.text = [formatter stringFromDate:now];
+    
+    self.clockButton.layer.borderWidth=1.0f;
+    self.clockButton.layer.borderColor=[[UIColor blueColor] CGColor];
+    self.clockButton.layer.cornerRadius = 12;
     
 }
 
