@@ -20,20 +20,9 @@
 		82251B0A1AC989B7001F6DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82251B081AC989B7001F6DD4 /* Main.storyboard */; };
 		82251B0C1AC989B7001F6DD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82251B0B1AC989B7001F6DD4 /* Images.xcassets */; };
 		82251B0F1AC989B7001F6DD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82251B0D1AC989B7001F6DD4 /* LaunchScreen.xib */; };
-		82251B1B1AC989B7001F6DD4 /* ECHackDemoAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B1A1AC989B7001F6DD4 /* ECHackDemoAppTests.m */; };
 		C3805CF31AC9F94B00F3BBDD /* CalendarData.m in Sources */ = {isa = PBXBuildFile; fileRef = C3805CF21AC9F94B00F3BBDD /* CalendarData.m */; };
 		C39F17DE1AC9A6D0007FA15E /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C39F17DD1AC9A6D0007FA15E /* UserData.plist */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		82251B151AC989B7001F6DD4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 82251AF01AC989B7001F6DD4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 82251AF71AC989B7001F6DD4;
-			remoteInfo = ECHackDemoApp;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D392E271AC9B08F00859A02 /* CorePlot-CocoaTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CorePlot-CocoaTouch.h"; sourceTree = "<group>"; };
@@ -134,9 +123,6 @@
 		82251B091AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82251B0B1AC989B7001F6DD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		82251B0E1AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		82251B141AC989B7001F6DD4 /* WagrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WagrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		82251B191AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		82251B1A1AC989B7001F6DD4 /* ECHackDemoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECHackDemoAppTests.m; sourceTree = "<group>"; };
 		C3805CF11AC9F94B00F3BBDD /* CalendarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarData.h; sourceTree = "<group>"; };
 		C3805CF21AC9F94B00F3BBDD /* CalendarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarData.m; sourceTree = "<group>"; };
 		C39F17DD1AC9A6D0007FA15E /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
@@ -150,13 +136,6 @@
 				1D392E811AC9C1AE00859A02 /* Accelerate.framework in Frameworks */,
 				1D392E791AC9B1E700859A02 /* QuartzCore.framework in Frameworks */,
 				1D392E761AC9B08F00859A02 /* libCorePlot-CocoaTouch.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82251B111AC989B7001F6DD4 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				82251AFA1AC989B7001F6DD4 /* ECHackDemoApp */,
-				82251B171AC989B7001F6DD4 /* ECHackDemoAppTests */,
 				82251AF91AC989B7001F6DD4 /* Products */,
 				1D392E771AC9B0F000859A02 /* Frameworks */,
 			);
@@ -273,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				82251AF81AC989B7001F6DD4 /* Wagr.app */,
-				82251B141AC989B7001F6DD4 /* WagrTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,23 +289,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		82251B171AC989B7001F6DD4 /* ECHackDemoAppTests */ = {
-			isa = PBXGroup;
-			children = (
-				82251B1A1AC989B7001F6DD4 /* ECHackDemoAppTests.m */,
-				82251B181AC989B7001F6DD4 /* Supporting Files */,
-			);
-			path = ECHackDemoAppTests;
-			sourceTree = "<group>";
-		};
-		82251B181AC989B7001F6DD4 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				82251B191AC989B7001F6DD4 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -349,24 +309,6 @@
 			productReference = 82251AF81AC989B7001F6DD4 /* Wagr.app */;
 			productType = "com.apple.product-type.application";
 		};
-		82251B131AC989B7001F6DD4 /* WagrTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "WagrTests" */;
-			buildPhases = (
-				82251B101AC989B7001F6DD4 /* Sources */,
-				82251B111AC989B7001F6DD4 /* Frameworks */,
-				82251B121AC989B7001F6DD4 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				82251B161AC989B7001F6DD4 /* PBXTargetDependency */,
-			);
-			name = WagrTests;
-			productName = ECHackDemoAppTests;
-			productReference = 82251B141AC989B7001F6DD4 /* WagrTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -379,10 +321,6 @@
 					82251AF71AC989B7001F6DD4 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = UBF8T346G9;
-					};
-					82251B131AC989B7001F6DD4 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 82251AF71AC989B7001F6DD4;
 					};
 				};
 			};
@@ -400,7 +338,6 @@
 			projectRoot = "";
 			targets = (
 				82251AF71AC989B7001F6DD4 /* Wagr */,
-				82251B131AC989B7001F6DD4 /* WagrTests */,
 			);
 		};
 /* End PBXProject section */
@@ -414,13 +351,6 @@
 				C39F17DE1AC9A6D0007FA15E /* UserData.plist in Resources */,
 				82251B0F1AC989B7001F6DD4 /* LaunchScreen.xib in Resources */,
 				82251B0C1AC989B7001F6DD4 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		82251B121AC989B7001F6DD4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,23 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		82251B101AC989B7001F6DD4 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				82251B1B1AC989B7001F6DD4 /* ECHackDemoAppTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		82251B161AC989B7001F6DD4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 82251AF71AC989B7001F6DD4 /* Wagr */;
-			targetProxy = 82251B151AC989B7001F6DD4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		82251B081AC989B7001F6DD4 /* Main.storyboard */ = {
@@ -596,40 +510,6 @@
 			};
 			name = Release;
 		};
-		82251B221AC989B7001F6DD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ECHackDemoAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = WagrTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECHackDemoApp.app/ECHackDemoApp";
-			};
-			name = Debug;
-		};
-		82251B231AC989B7001F6DD4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ECHackDemoAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = WagrTests;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECHackDemoApp.app/ECHackDemoApp";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -647,15 +527,6 @@
 			buildConfigurations = (
 				82251B1F1AC989B7001F6DD4 /* Debug */,
 				82251B201AC989B7001F6DD4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "WagrTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				82251B221AC989B7001F6DD4 /* Debug */,
-				82251B231AC989B7001F6DD4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
