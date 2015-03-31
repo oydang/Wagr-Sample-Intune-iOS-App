@@ -332,8 +332,17 @@
 
 - (IBAction)onExportButtonPressed:(UIButton *)sender {
     [[self.calendarData getDocumentInteractionController]
-     presentOpenInMenuFromRect:self.exportButton.frame
+     presentOptionsMenuFromRect:self.exportButton.frame
                         inView:self.view
                       animated:YES];
+
+//Launch excel by url scheme. Not working because target doc not available.
+//    NSMutableString* filepath = [NSMutableString stringWithString:@"ms-excel:"];
+//    [filepath appendString:[self.calendarData getFileForExport]];
+//    NSURL *documentURL = [NSURL URLWithString:filepath];
+//    if ([[UIApplication sharedApplication] canOpenURL:documentURL]) {
+//        [[UIApplication sharedApplication] openURL:documentURL];
+//    }
+   
 }
 @end

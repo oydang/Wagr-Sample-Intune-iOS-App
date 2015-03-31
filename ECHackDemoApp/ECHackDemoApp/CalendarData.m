@@ -79,8 +79,8 @@
     NSData *plistData = [NSPropertyListSerialization dataWithPropertyList:userData format:NSPropertyListXMLFormat_v1_0 options:0 error:&error];
     
     [plistData writeToFile:userDataPath atomically:YES];
-    NSString* filePath = [self getFileForExport];
-    [self saveDataFromFile:filePath];
+    //NSString* filePath = [self getFileForExport];
+    //[self saveDataFromFile:filePath];
 }
 
 - (NSString*) getFileForExport {

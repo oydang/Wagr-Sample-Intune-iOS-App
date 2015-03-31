@@ -18,4 +18,5 @@
 - (void) saveCalendarData;
 - (UIDocumentInteractionController*) getDocumentInteractionController;
 - (BOOL) saveDataFromFile: (NSString*) filePath;
+- (NSString*) getFileForExport;
 @end
