@@ -271,6 +271,8 @@
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <tabBarItem key="tabBarItem" title="Reports" image="Line Chart-25" id="VWw-aI-jUH"/>
                     <connections>
+                        <outlet property="contentView" destination="Iti-dL-Zve" id="9kQ-iM-zkO"/>
+                        <outlet property="exportButton" destination="TBN-Pb-cja" id="9QN-nD-0pV"/>
                         <outlet property="resultsScatterPlot" destination="PnA-px-IT3" id="XbZ-5l-bQX"/>
                     </connections>
                 </viewController>

@@ -322,6 +322,9 @@
 }
 
 - (IBAction)onExportButtonPressed:(UIButton *)sender {
-    
+    [[self.calendarData getDocumentInteractionController]
+     presentOpenInMenuFromRect:self.exportButton.frame
+                        inView:self.view
+                      animated:YES];
 }
 @end

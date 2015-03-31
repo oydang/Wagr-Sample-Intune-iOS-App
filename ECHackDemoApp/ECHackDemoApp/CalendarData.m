@@ -114,7 +114,7 @@
 
 - (UIDocumentInteractionController*) getDocumentInteractionController {
     NSString* filePath = [self getFileForExport];
-    NSURL *url = [[NSURL alloc] initWithString:filePath];
+    NSURL *url = [NSURL fileURLWithPath:filePath];
     UIDocumentInteractionController* controller= [UIDocumentInteractionController interactionControllerWithURL:url];
     return controller;
 }
