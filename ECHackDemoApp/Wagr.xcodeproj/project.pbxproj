@@ -123,7 +123,7 @@
 		2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2A7DC1A91ACA030D00C6EB6D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		2A7DC1AA1ACA030D00C6EB6D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
-		82251AF81AC989B7001F6DD4 /* ECHackDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECHackDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		82251AF81AC989B7001F6DD4 /* Wagr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wagr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82251AFC1AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82251AFD1AC989B7001F6DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		82251AFF1AC989B7001F6DD4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		82251B091AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82251B0B1AC989B7001F6DD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		82251B0E1AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		82251B141AC989B7001F6DD4 /* ECHackDemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECHackDemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		82251B141AC989B7001F6DD4 /* WagrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WagrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		82251B191AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82251B1A1AC989B7001F6DD4 /* ECHackDemoAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ECHackDemoAppTests.m; sourceTree = "<group>"; };
 		C3805CF11AC9F94B00F3BBDD /* CalendarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarData.h; sourceTree = "<group>"; };
@@ -272,8 +272,8 @@
 		82251AF91AC989B7001F6DD4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				82251AF81AC989B7001F6DD4 /* ECHackDemoApp.app */,
-				82251B141AC989B7001F6DD4 /* ECHackDemoAppTests.xctest */,
+				82251AF81AC989B7001F6DD4 /* Wagr.app */,
+				82251B141AC989B7001F6DD4 /* WagrTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,9 +332,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		82251AF71AC989B7001F6DD4 /* ECHackDemoApp */ = {
+		82251AF71AC989B7001F6DD4 /* Wagr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82251B1E1AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "ECHackDemoApp" */;
+			buildConfigurationList = 82251B1E1AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "Wagr" */;
 			buildPhases = (
 				82251AF41AC989B7001F6DD4 /* Sources */,
 				82251AF61AC989B7001F6DD4 /* Resources */,
@@ -344,14 +344,14 @@
 			);
 			dependencies = (
 			);
-			name = ECHackDemoApp;
+			name = Wagr;
 			productName = ECHackDemoApp;
-			productReference = 82251AF81AC989B7001F6DD4 /* ECHackDemoApp.app */;
+			productReference = 82251AF81AC989B7001F6DD4 /* Wagr.app */;
 			productType = "com.apple.product-type.application";
 		};
-		82251B131AC989B7001F6DD4 /* ECHackDemoAppTests */ = {
+		82251B131AC989B7001F6DD4 /* WagrTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "ECHackDemoAppTests" */;
+			buildConfigurationList = 82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "WagrTests" */;
 			buildPhases = (
 				82251B101AC989B7001F6DD4 /* Sources */,
 				82251B111AC989B7001F6DD4 /* Frameworks */,
@@ -362,9 +362,9 @@
 			dependencies = (
 				82251B161AC989B7001F6DD4 /* PBXTargetDependency */,
 			);
-			name = ECHackDemoAppTests;
+			name = WagrTests;
 			productName = ECHackDemoAppTests;
-			productReference = 82251B141AC989B7001F6DD4 /* ECHackDemoAppTests.xctest */;
+			productReference = 82251B141AC989B7001F6DD4 /* WagrTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -386,7 +386,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 82251AF31AC989B7001F6DD4 /* Build configuration list for PBXProject "ECHackDemoApp" */;
+			buildConfigurationList = 82251AF31AC989B7001F6DD4 /* Build configuration list for PBXProject "Wagr" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -399,8 +399,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				82251AF71AC989B7001F6DD4 /* ECHackDemoApp */,
-				82251B131AC989B7001F6DD4 /* ECHackDemoAppTests */,
+				82251AF71AC989B7001F6DD4 /* Wagr */,
+				82251B131AC989B7001F6DD4 /* WagrTests */,
 			);
 		};
 /* End PBXProject section */
@@ -439,7 +439,6 @@
 				1D392E7E1AC9B31E00859A02 /* ReportsViewController.m in Sources */,
 				2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */,
 				C3805CF31AC9F94B00F3BBDD /* CalendarData.m in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +455,7 @@
 /* Begin PBXTargetDependency section */
 		82251B161AC989B7001F6DD4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 82251AF71AC989B7001F6DD4 /* ECHackDemoApp */;
+			target = 82251AF71AC989B7001F6DD4 /* Wagr */;
 			targetProxy = 82251B151AC989B7001F6DD4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -573,7 +572,7 @@
 					"$(PROJECT_DIR)",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wagr;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -592,7 +591,7 @@
 					"$(PROJECT_DIR)",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wagr;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -611,7 +610,7 @@
 				);
 				INFOPLIST_FILE = ECHackDemoAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WagrTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECHackDemoApp.app/ECHackDemoApp";
 			};
 			name = Debug;
@@ -626,7 +625,7 @@
 				);
 				INFOPLIST_FILE = ECHackDemoAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WagrTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ECHackDemoApp.app/ECHackDemoApp";
 			};
 			name = Release;
@@ -634,7 +633,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		82251AF31AC989B7001F6DD4 /* Build configuration list for PBXProject "ECHackDemoApp" */ = {
+		82251AF31AC989B7001F6DD4 /* Build configuration list for PBXProject "Wagr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82251B1C1AC989B7001F6DD4 /* Debug */,
@@ -643,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82251B1E1AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "ECHackDemoApp" */ = {
+		82251B1E1AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "Wagr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82251B1F1AC989B7001F6DD4 /* Debug */,
@@ -652,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "ECHackDemoAppTests" */ = {
+		82251B211AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "WagrTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				82251B221AC989B7001F6DD4 /* Debug */,
