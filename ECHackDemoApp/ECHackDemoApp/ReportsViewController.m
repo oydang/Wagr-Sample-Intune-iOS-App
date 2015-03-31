@@ -128,10 +128,13 @@
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(xLow) length:CPTDecimalFromDouble((oneDay * 31.0) - xLow)];
     plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(yLow) length:CPTDecimalFromDouble([maxWageVal doubleValue] + 5.0 - yLow)];
     
+    int labelWidth = 80;
+    int numLabelsToFit = self.resultsScatterPlot.frame.size.width / labelWidth;
+    
     // Axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)newGraph.axisSet;
     CPTXYAxis *x          = axisSet.xAxis;
-    x.majorIntervalLength         = CPTDecimalFromDouble(maxXVal / 10);
+    x.majorIntervalLength         = CPTDecimalFromDouble(maxXVal / numLabelsToFit);
     x.orthogonalCoordinateDecimal = CPTDecimalFromDouble(2.0);
     x.minorTicksPerInterval       = 0;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
