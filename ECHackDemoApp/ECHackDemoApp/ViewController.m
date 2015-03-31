@@ -22,9 +22,6 @@
     // Do any additional setup after loading the view, typically from a nib.
     timerRunning = NO;
     pauseTimeInterval = 0;
-    //In cents
-    hourlyWage = 5000;
-
     calendarData = [[CalendarData alloc] init];
 
 }
@@ -41,6 +38,8 @@
         [UIView performWithoutAnimation:^{
             [self.clockButton setTitle:@"Clock Out" forState:UIControlStateNormal];
         }];
+        
+        hourlyWage = [Settings hourlyWage];
         
         timerRunning = YES;
         

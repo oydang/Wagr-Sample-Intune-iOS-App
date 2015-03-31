@@ -8,22 +8,13 @@
 
 #import "Settings.h"
 
+static int hourlyWage;
+
 @implementation Settings
++(int)hourlyWage {return hourlyWage;}
 
-static Settings *sharedHourlyWage = nil;
-
-+ (Settings *)sharedHourlyWage {
-    if (sharedHourlyWage == nil) {
-        sharedHourlyWage = [[super allocWithZone:NULL] init];
-    }
-    return sharedHourlyWage;
-}
-
-- (id)init {
-    if ( (self = [super init]) ) {
-        // your custom initialization
-    }
-    return self;
++(void)setHourlyWage: (int) wage{
+    hourlyWage = wage;
 }
 
 @end

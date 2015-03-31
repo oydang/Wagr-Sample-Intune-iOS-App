@@ -281,6 +281,9 @@
                                 <rect key="frame" x="28" y="152" width="31" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="onDollarsWageEntered:" destination="y4V-x3-yQn" eventType="editingDidEnd" id="fW7-Dk-sFE"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="." textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Pf-bC-I08">
                                 <rect key="frame" x="56" y="152" width="9" height="30"/>
@@ -306,11 +309,19 @@
                                 <rect key="frame" x="64" y="152" width="21" height="30"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="onCentsWageEntered:" destination="y4V-x3-yQn" eventType="editingDidEnd" id="gzM-wf-GXb"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings-26" id="ehT-29-Fra"/>
+                    <connections>
+                        <outlet property="centsWage" destination="6sw-dE-vaq" id="vbV-qC-cKO"/>
+                        <outlet property="dollarWage" destination="iVk-BD-oGk" id="oyw-GI-c1M"/>
+                        <outlet property="userName" destination="qnO-uX-2rJ" id="AWC-lY-6YS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ne-fy-739" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

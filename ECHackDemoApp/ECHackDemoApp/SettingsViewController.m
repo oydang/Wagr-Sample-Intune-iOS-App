@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "ViewController.h"
+#import "Settings.h"
 
 @interface SettingsViewController ()
 
@@ -37,5 +38,22 @@
 
 - (IBAction)onLinkPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://technet.microsoft.com/library/dn878028.aspx"]];
+}
+- (IBAction)onDollarsWageEntered:(UITextField *)sender {
+    dollarsInCents = [self.dollarWage.text intValue] * 100;
+    if ((cents >= 0)&& (dollarsInCents >= 0)) {
+        hourlyWage = dollarsInCents + cents;
+        [Settings setHourlyWage:hourlyWage];
+    }
+    NSLog(@"Hourly Wage: %d", hourlyWage);
+}
+
+- (IBAction)onCentsWageEntered:(UITextField *)sender {
+    cents = [self.centsWage.text intValue];
+    if ((cents >= 0)&& (dollarsInCents >= 0)) {
+        hourlyWage = dollarsInCents + cents;
+        [Settings setHourlyWage:hourlyWage];
+    }
+    NSLog(@"Hourly Wage: %d", hourlyWage);
 }
 @end

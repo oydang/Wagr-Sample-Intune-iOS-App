@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Settings : NSObject{
-    int hourlyWage;
-}
-
-+(Settings *) sharedHourlyWage;
-
+@interface Settings : NSObject
+    
++(int)hourlyWage;
++(void)setHourlyWage: (int) wage;
 @end
