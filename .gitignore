@@ -13,3 +13,7 @@ ECHackDemoApp/ECHackDemoApp.xcodeproj/project.pbxproj
 *.xcuserstate
 
 *.xcworkspace/
+
+ECHackDemoApp/ECHackDemoApp.xcodeproj/xcuserdata/petebiencourt.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.xcscheme
