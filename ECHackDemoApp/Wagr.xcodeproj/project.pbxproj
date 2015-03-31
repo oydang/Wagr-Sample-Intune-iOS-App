@@ -11,6 +11,7 @@
 		1D392E791AC9B1E700859A02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D392E781AC9B1E700859A02 /* QuartzCore.framework */; };
 		1D392E7E1AC9B31E00859A02 /* ReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D392E7D1AC9B31E00859A02 /* ReportsViewController.m */; };
 		1D392E811AC9C1AE00859A02 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D392E801AC9C1AE00859A02 /* Accelerate.framework */; };
+		1DF624011ACB0F2600E23CC5 /* DateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF624001ACB0F2600E23CC5 /* DateUtility.m */; };
 		2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */; };
 		2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1AA1ACA030D00C6EB6D /* Settings.m */; };
 		82251AFE1AC989B7001F6DD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251AFD1AC989B7001F6DD4 /* main.m */; };
@@ -108,6 +109,8 @@
 		1D392E7C1AC9B31E00859A02 /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportsViewController.h; sourceTree = "<group>"; };
 		1D392E7D1AC9B31E00859A02 /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportsViewController.m; sourceTree = "<group>"; };
 		1D392E801AC9C1AE00859A02 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		1DF623FF1ACB0F2600E23CC5 /* DateUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtility.h; sourceTree = "<group>"; };
+		1DF624001ACB0F2600E23CC5 /* DateUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtility.m; sourceTree = "<group>"; };
 		2A7DC1A61ACA026D00C6EB6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2A7DC1A91ACA030D00C6EB6D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 		82251AFA1AC989B7001F6DD4 /* ECHackDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				1DF623FF1ACB0F2600E23CC5 /* DateUtility.h */,
+				1DF624001ACB0F2600E23CC5 /* DateUtility.m */,
 				C39F17DD1AC9A6D0007FA15E /* UserData.plist */,
 				C3805CF11AC9F94B00F3BBDD /* CalendarData.h */,
 				C3805CF21AC9F94B00F3BBDD /* CalendarData.m */,
@@ -367,6 +372,7 @@
 				2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */,
 				82251B041AC989B7001F6DD4 /* ECHackDemoApp.xcdatamodeld in Sources */,
 				1D392E7E1AC9B31E00859A02 /* ReportsViewController.m in Sources */,
+				1DF624011ACB0F2600E23CC5 /* DateUtility.m in Sources */,
 				2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */,
 				C3805CF31AC9F94B00F3BBDD /* CalendarData.m in Sources */,
 			);

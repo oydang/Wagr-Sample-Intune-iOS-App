@@ -8,6 +8,7 @@
 
 #import "ReportsViewController.h"
 #import "CalendarData.h"
+#import "DateUtility.h"
 
 @interface ReportsViewController()
 
@@ -24,11 +25,11 @@
     
     [super viewDidAppear:animated];
     
-    // Setup data
+    // Initialize the calendar data
+    self.calendarData = [[CalendarData alloc] init];
     
     NSDateFormatter* dateConverter = [[NSDateFormatter alloc] init];
     dateConverter.dateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
-    NSDate *todaysDate = [self todaysDate];
     NSDate *refDate = [dateConverter dateFromString:@"2015-03-01 23:18:23 +0100"];
     
     // If you make sure your dates are calculated at noon, you shouldn't have to
@@ -39,36 +40,67 @@
     // Convert the calendar data to a format understood by the line plotter.
     NSMutableArray *dateAndEarningsArray = [NSMutableArray array];
     
-    NSDictionary *testValuesDict = @{ @"2015-03-02 23:18:23 +0100" : @[[NSNumber numberWithDouble:2.0], [NSNumber numberWithDouble:10.0]],
-                                      @"2015-03-05 23:18:23 +0100" : @[[NSNumber numberWithDouble:4.0], [NSNumber numberWithDouble:10.0]],
-                                      @"2015-03-08 23:18:23 +0100" : @[[NSNumber numberWithDouble:7.0], [NSNumber numberWithDouble:10.0]],
-                                      @"2015-03-15 23:18:23 +0100" : @[[NSNumber numberWithDouble:8.0], [NSNumber numberWithDouble:10.0]],
-                                      @"2015-03-18 23:18:23 +0100" : @[[NSNumber numberWithDouble:5.0], [NSNumber numberWithDouble:10.0]],
-                                      @"2015-03-24 23:18:23 +0100" : @[[NSNumber numberWithDouble:9.0], [NSNumber numberWithDouble:10.0]],
-                                      @"2015-03-29 23:18:23 +0100" : @[[NSNumber numberWithDouble:9.0], [NSNumber numberWithDouble:10.0]]};
+    NSDictionary *fakeRecordedWagesDict = @{ @"2015-03-02 23:18:23 +0100" : @[[NSNumber numberWithDouble:2.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-05 23:18:23 +0100" : @[[NSNumber numberWithDouble:4.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-05 23:18:42 +0100" : @[[NSNumber numberWithDouble:2.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-08 23:18:23 +0100" : @[[NSNumber numberWithDouble:3.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-15 23:18:23 +0100" : @[[NSNumber numberWithDouble:8.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-18 23:18:23 +0100" : @[[NSNumber numberWithDouble:5.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-24 23:18:23 +0100" : @[[NSNumber numberWithDouble:7.0], [NSNumber numberWithDouble:1000.0]],
+                                             @"2015-03-29 23:18:23 +0100" : @[[NSNumber numberWithDouble:9.0], [NSNumber numberWithDouble:1000.0]]};
     
-    for(id date in testValuesDict)
+    NSMutableDictionary *combinedTestAndRealWagesDict = [fakeRecordedWagesDict mutableCopy];
+    [combinedTestAndRealWagesDict addEntriesFromDictionary:self.calendarData.calendarDictionary];
+    
+    NSArray *sortedDateKeys = [[combinedTestAndRealWagesDict allKeys] sortedArrayUsingSelector: @selector(compare:)];
+    
+    for(id date in sortedDateKeys)
     {
-        NSArray *hoursAndWage = (NSArray *) testValuesDict[date];
+        NSArray *hoursAndWage = (NSArray *) combinedTestAndRealWagesDict[date];
         NSDate *convertedDate = [dateConverter dateFromString:date];
-        int dayIndex = [self daysBetweenDate:refDate andDate:convertedDate];
+        int dayIndex = [DateUtility daysBetweenDate:refDate andDate:convertedDate];
         
-        [dateAndEarningsArray addObject:
-         @{ @(CPTScatterPlotFieldX).description: [NSNumber numberWithInt:dayIndex * oneDay],
-            @(CPTScatterPlotFieldY).description: [NSNumber numberWithInt:[(NSNumber *)hoursAndWage[0] doubleValue] * [(NSNumber *)hoursAndWage[1] doubleValue]] }
-         ];
+        if(dateAndEarningsArray.count > 0)
+        {
+            NSDictionary *dateAndEarningsEntry = dateAndEarningsArray[dateAndEarningsArray.count - 1];
+            double prevWageValue = [((NSNumber *)dateAndEarningsEntry[@(CPTScatterPlotFieldY).description]) doubleValue];
+            
+            // If the entry already exists
+            if([((NSNumber *)dateAndEarningsEntry[@(CPTScatterPlotFieldX).description]) intValue] == dayIndex * oneDay)
+            {
+                [dateAndEarningsArray removeLastObject];
+                [dateAndEarningsArray addObject:
+                 @{ @(CPTScatterPlotFieldX).description: [NSNumber numberWithInt: dayIndex * oneDay],
+                    @(CPTScatterPlotFieldY).description: [NSNumber numberWithInt:prevWageValue + [(NSNumber *)hoursAndWage[0] doubleValue]/100.0 * [(NSNumber *)hoursAndWage[1] doubleValue]] }
+                 ];
+            }
+            else
+            {
+                [dateAndEarningsArray addObject:
+                 @{ @(CPTScatterPlotFieldX).description: [NSNumber numberWithInt:dayIndex * oneDay],
+                    @(CPTScatterPlotFieldY).description: [NSNumber numberWithInt:[(NSNumber *)hoursAndWage[0] doubleValue]/100.0 * [(NSNumber *)hoursAndWage[1] doubleValue]] }
+                 ];
+            }
+        }
+        else
+        {
+            [dateAndEarningsArray addObject:
+             @{ @(CPTScatterPlotFieldX).description: [NSNumber numberWithInt:dayIndex * oneDay],
+                @(CPTScatterPlotFieldY).description: [NSNumber numberWithInt:[(NSNumber *)hoursAndWage[0] doubleValue]/100.0 * [(NSNumber *)hoursAndWage[1] doubleValue]] }
+             ];
+        }
     }
     
+    NSSortDescriptor *yDescriptor = [[NSSortDescriptor alloc] initWithKey:@(CPTScatterPlotFieldY).description ascending: YES selector:@selector(compare:)];
+    NSArray *yDescriptors = [NSArray arrayWithObjects:yDescriptor, nil];
+    NSArray *dateAndEarningsArraySortedByWage = [dateAndEarningsArray sortedArrayUsingDescriptors:yDescriptors];
+    
+    // Sort the wage records by date
     NSSortDescriptor *xDescriptor = [[NSSortDescriptor alloc] initWithKey:@(CPTScatterPlotFieldX).description ascending: YES selector:@selector(compare:)];
-    NSArray *descriptors = [NSArray arrayWithObjects:xDescriptor, nil];
+    NSArray *xDescriptors = [NSArray arrayWithObjects:xDescriptor, nil];
     
-    //input array containing dictionaries
-    NSArray *sortedDateAndEarningsArray = [dateAndEarningsArray sortedArrayUsingDescriptors:descriptors];
+    NSArray *sortedDateAndEarningsArray = [dateAndEarningsArray sortedArrayUsingDescriptors:xDescriptors];
     self.dataForPlot = sortedDateAndEarningsArray;
-    
-    // Initialize the calendar data.
-    self.calendarData = [[CalendarData alloc] init];
-    [self.calendarData loadCalendarData];
     
     // Create graph from theme
     CPTXYGraph *newGraph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
@@ -90,11 +122,11 @@
 
     NSNumber *maxDateVal = sortedDateAndEarningsArray[sortedDateAndEarningsArray.count - 1][@(CPTScatterPlotFieldX).description];
     NSNumber *minDateVal = sortedDateAndEarningsArray[0][@(CPTScatterPlotFieldX).description];
-//    abs([maxDateVal doubleValue] - [minDateVal doubleValue])
+    NSNumber *maxWageVal = dateAndEarningsArraySortedByWage[dateAndEarningsArray.count - 1][@(CPTScatterPlotFieldY).description];
     
     double maxXVal = oneDay * 31.0;
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(xLow) length:CPTDecimalFromDouble((oneDay * 31.0) - xLow)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(yLow) length:CPTDecimalFromDouble(100.0 - yLow)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(yLow) length:CPTDecimalFromDouble([maxWageVal doubleValue] + 5.0 - yLow)];
     
     // Axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)newGraph.axisSet;
@@ -111,7 +143,7 @@
     x.labelFormatter            = timeFormatter;
     
     CPTXYAxis *y = axisSet.yAxis;
-    y.majorIntervalLength         = CPTDecimalFromDouble(5.0);
+    y.majorIntervalLength         = CPTDecimalFromDouble([maxWageVal doubleValue]/20.0);
     y.minorTicksPerInterval       = 2;
     y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(oneDay);
     NSNumberFormatter *earningsFormatter = [[NSNumberFormatter alloc] init];
@@ -156,29 +188,6 @@
 -(id)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
     return self.dataForPlot[index][@(fieldEnum).description];
-}
-
--(NSDate *)todaysDate
-{
-    return [[NSCalendar currentCalendar] dateBySettingHour:10 minute:0 second:0 ofDate:[NSDate date] options:0];
-}
-
--(int)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
-{
-    NSDate *fromDate;
-    NSDate *toDate;
-    
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    
-    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
-                 interval:NULL forDate:fromDateTime];
-    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
-                 interval:NULL forDate:toDateTime];
-    
-    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
-                                               fromDate:fromDate toDate:toDate options:0];
-    
-    return [difference day];
 }
 
 //- (void)buildScatterPlot {

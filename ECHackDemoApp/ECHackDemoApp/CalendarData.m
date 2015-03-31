@@ -8,6 +8,7 @@
 
 #import "CalendarData.h"
 @import UIKit;
+#import "DateUtility.h"
 
 @implementation CalendarData{
     
@@ -57,12 +58,12 @@
 
     //add array back to calendar
     
-    NSArray *newData = [NSArray arrayWithObjects: [NSNumber numberWithDouble:hours], [NSNumber numberWithDouble:wage], nil];
+    NSMutableArray *newData = [NSMutableArray arrayWithObjects: [NSNumber numberWithDouble:hours], [NSNumber numberWithDouble:wage], nil];
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
-    NSString* dateString = [dateFormatter stringFromDate:[NSDate date]];
-    
+    NSDate *todaysDate = [NSDate date];
+    NSString* dateString = [dateFormatter stringFromDate:todaysDate];
     [self.calendarDictionary setObject:newData forKey:dateString];
 }
 
