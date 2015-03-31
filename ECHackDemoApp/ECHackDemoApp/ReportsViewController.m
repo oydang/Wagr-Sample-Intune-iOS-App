@@ -7,29 +7,68 @@
 //
 
 #import "ReportsViewController.h"
+#import "CalendarData.h"
 
 @interface ReportsViewController()
 
 @property (nonatomic, strong) IBOutlet CPTGraphHostingView *resultsScatterPlot;
 @property (nonatomic, strong) CPTXYGraph *graph;
 @property (nonatomic, strong) NSArray *dataForPlot;
-@property (weak, nonatomic) IBOutlet UIButton *importButton;
-@property (weak, nonatomic) IBOutlet UIButton *exportButton;
+@property (nonatomic, strong) CalendarData *calendarData;
 
 @end
 
 @implementation ReportsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidAppear:(BOOL)animated {
     
-    [super viewDidLoad];
+    [super viewDidAppear:animated];
+    
+    // Setup data
+    
+    NSDateFormatter* dateConverter = [[NSDateFormatter alloc] init];
+    dateConverter.dateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
+    NSDate *todaysDate = [self todaysDate];
+    NSDate *refDate = [dateConverter dateFromString:@"2015-03-01 23:18:23 +0100"];
     
     // If you make sure your dates are calculated at noon, you shouldn't have to
     // worry about daylight savings. If you use midnight, you will have to adjust
     // for daylight savings time.
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    NSDate *refDate            = [formatter dateFromString:@"12:00 Oct 29, 2009"];
-    NSTimeInterval oneDay      = 24 * 60 * 60;
+    NSTimeInterval oneDay = 24 * 60 * 60;
+    
+    // Convert the calendar data to a format understood by the line plotter.
+    NSMutableArray *dateAndEarningsArray = [NSMutableArray array];
+    
+    NSDictionary *testValuesDict = @{ @"2015-03-02 23:18:23 +0100" : @[[NSNumber numberWithDouble:2.0], [NSNumber numberWithDouble:10.0]],
+                                      @"2015-03-05 23:18:23 +0100" : @[[NSNumber numberWithDouble:4.0], [NSNumber numberWithDouble:10.0]],
+                                      @"2015-03-08 23:18:23 +0100" : @[[NSNumber numberWithDouble:7.0], [NSNumber numberWithDouble:10.0]],
+                                      @"2015-03-15 23:18:23 +0100" : @[[NSNumber numberWithDouble:8.0], [NSNumber numberWithDouble:10.0]],
+                                      @"2015-03-18 23:18:23 +0100" : @[[NSNumber numberWithDouble:5.0], [NSNumber numberWithDouble:10.0]],
+                                      @"2015-03-24 23:18:23 +0100" : @[[NSNumber numberWithDouble:9.0], [NSNumber numberWithDouble:10.0]],
+                                      @"2015-03-29 23:18:23 +0100" : @[[NSNumber numberWithDouble:9.0], [NSNumber numberWithDouble:10.0]]};
+    
+    for(id date in testValuesDict)
+    {
+        NSArray *hoursAndWage = (NSArray *) testValuesDict[date];
+        NSDate *convertedDate = [dateConverter dateFromString:date];
+        int dayIndex = [self daysBetweenDate:refDate andDate:convertedDate];
+        
+        [dateAndEarningsArray addObject:
+         @{ @(CPTScatterPlotFieldX).description: [NSNumber numberWithInt:dayIndex * oneDay],
+            @(CPTScatterPlotFieldY).description: [NSNumber numberWithInt:[(NSNumber *)hoursAndWage[0] doubleValue] * [(NSNumber *)hoursAndWage[1] doubleValue]] }
+         ];
+    }
+    
+    NSSortDescriptor *xDescriptor = [[NSSortDescriptor alloc] initWithKey:@(CPTScatterPlotFieldX).description ascending: YES selector:@selector(compare:)];
+    NSArray *descriptors = [NSArray arrayWithObjects:xDescriptor, nil];
+    
+    //input array containing dictionaries
+    NSArray *sortedDateAndEarningsArray = [dateAndEarningsArray sortedArrayUsingDescriptors:descriptors];
+    self.dataForPlot = sortedDateAndEarningsArray;
+    
+    // Initialize the calendar data.
+    self.calendarData = [[CalendarData alloc] init];
+    [self.calendarData loadCalendarData];
     
     // Create graph from theme
     CPTXYGraph *newGraph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
@@ -37,29 +76,43 @@
     [newGraph applyTheme:theme];
     self.graph = newGraph;
     
+    newGraph.paddingLeft   = 10.0;
+    newGraph.paddingTop    = 10.0;
+    newGraph.paddingRight  = 10.0;
+    newGraph.paddingBottom = 10.0;
+    
     self.resultsScatterPlot.hostedGraph = newGraph;
     
     // Setup scatter plot space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)newGraph.defaultPlotSpace;
-    NSTimeInterval xLow       = 0.0;
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(xLow) length:CPTDecimalFromDouble(oneDay * 5.0)];
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(0.0) length:CPTDecimalFromDouble(50.0)];
+    NSTimeInterval xLow       = -oneDay * 1.5;
+    NSTimeInterval yLow       = -2.5;
+
+    NSNumber *maxDateVal = sortedDateAndEarningsArray[sortedDateAndEarningsArray.count - 1][@(CPTScatterPlotFieldX).description];
+    NSNumber *minDateVal = sortedDateAndEarningsArray[0][@(CPTScatterPlotFieldX).description];
+//    abs([maxDateVal doubleValue] - [minDateVal doubleValue])
+    
+    double maxXVal = oneDay * 31.0;
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(xLow) length:CPTDecimalFromDouble((oneDay * 31.0) - xLow)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(yLow) length:CPTDecimalFromDouble(100.0 - yLow)];
     
     // Axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)newGraph.axisSet;
     CPTXYAxis *x          = axisSet.xAxis;
-    x.majorIntervalLength         = CPTDecimalFromDouble(oneDay);
+    x.majorIntervalLength         = CPTDecimalFromDouble(maxXVal / 10);
     x.orthogonalCoordinateDecimal = CPTDecimalFromDouble(2.0);
     x.minorTicksPerInterval       = 0;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = kCFDateFormatterShortStyle;
     CPTTimeFormatter *timeFormatter = [[CPTTimeFormatter alloc] initWithDateFormatter:dateFormatter];
+    
+    // Set the starting date for the graph
     timeFormatter.referenceDate = refDate;
     x.labelFormatter            = timeFormatter;
     
     CPTXYAxis *y = axisSet.yAxis;
     y.majorIntervalLength         = CPTDecimalFromDouble(5.0);
-    y.minorTicksPerInterval       = 5;
+    y.minorTicksPerInterval       = 2;
     y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(oneDay);
     NSNumberFormatter *earningsFormatter = [[NSNumberFormatter alloc] init];
     [earningsFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -71,7 +124,7 @@
     dataSourceLinePlot.identifier = @"Date Plot";
     
     CPTMutableLineStyle *lineStyle = [dataSourceLinePlot.dataLineStyle mutableCopy];
-    lineStyle.lineWidth              = 3.0;
+    lineStyle.lineWidth              = 2.0;
     lineStyle.lineColor              = [CPTColor greenColor];
     dataSourceLinePlot.dataLineStyle = lineStyle;
     
@@ -79,26 +132,17 @@
     CPTColor *areaColor       = [CPTColor greenColor];
     CPTGradient *areaGradient = [CPTGradient gradientWithBeginningColor:areaColor endingColor:[CPTColor clearColor]];
     areaGradient.angle = -90.0;
-    CPTFill *areaGradientFill = [CPTFill fillWithColor:[CPTColor greenColor]];
+    CPTFill *areaGradientFill = [CPTFill fillWithColor:[CPTColor colorWithComponentRed:CPTFloat(0.0) green:CPTFloat(1.0) blue:CPTFloat(0.0) alpha:CPTFloat(0.5)]];
     dataSourceLinePlot.areaFill      = areaGradientFill;
     dataSourceLinePlot.areaBaseValue = CPTDecimalFromDouble(1.75);
     
     dataSourceLinePlot.dataSource = self;
     [newGraph addPlot:dataSourceLinePlot];
+}
+
+- (void)viewDidLoad {
     
-    // Add some data
-    NSMutableArray *newData = [NSMutableArray array];
-    for ( NSUInteger i = 0; i < 10; i++ ) {
-        NSTimeInterval xVal = oneDay * i;
-        
-        double yVal = abs(10.0 * arc4random() / (double)UINT32_MAX + 10.0);
-        
-        [newData addObject:
-         @{ @(CPTScatterPlotFieldX): @(xVal),
-            @(CPTScatterPlotFieldY): @(yVal) }
-         ];
-    }
-    self.dataForPlot = newData;
+    [super viewDidLoad];
 }
 
 #pragma mark -
@@ -111,7 +155,30 @@
 
 -(id)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
-    return self.dataForPlot[index][@(fieldEnum)];
+    return self.dataForPlot[index][@(fieldEnum).description];
+}
+
+-(NSDate *)todaysDate
+{
+    return [[NSCalendar currentCalendar] dateBySettingHour:10 minute:0 second:0 ofDate:[NSDate date] options:0];
+}
+
+-(int)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
+{
+    NSDate *fromDate;
+    NSDate *toDate;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
+                 interval:NULL forDate:fromDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
+                 interval:NULL forDate:toDateTime];
+    
+    NSDateComponents *difference = [calendar components:NSCalendarUnitDay
+                                               fromDate:fromDate toDate:toDate options:0];
+    
+    return [difference day];
 }
 
 //- (void)buildScatterPlot {

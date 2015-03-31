@@ -58,8 +58,12 @@
     //add array back to calendar
     
     NSArray *newData = [NSArray arrayWithObjects: [NSNumber numberWithDouble:hours], [NSNumber numberWithDouble:wage], nil];
-    [self.calendarDictionary setObject:newData forKey:date.description];
     
+    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss ZZZ";
+    NSString* dateString = [dateFormatter stringFromDate:[NSDate date]];
+    
+    [self.calendarDictionary setObject:newData forKey:dateString];
 }
 
 - (void) saveCalendarData {
