@@ -47,8 +47,13 @@
         [UIView performWithoutAnimation:^{
             [self.clockButton setTitle:@"Clock Out" forState:UIControlStateNormal];
         }];
-        
-        hourlyWage = [Settings hourlyWage];
+        if (hourlyWage == 0) {
+            hourlyWage = 725;
+        }
+        else{
+            hourlyWage = [Settings hourlyWage];            
+        }
+
         
         timerRunning = YES;
         
