@@ -114,26 +114,31 @@
     newGraph.paddingBottom = 10.0;
     
     self.resultsScatterPlot.hostedGraph = newGraph;
-    
-    // Setup scatter plot space
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)newGraph.defaultPlotSpace;
-    NSTimeInterval xLow       = -oneDay * 1.5;
-    NSTimeInterval yLow       = -2.5;
 
     NSNumber *maxDateVal = sortedDateAndEarningsArray[sortedDateAndEarningsArray.count - 1][@(CPTScatterPlotFieldX).description];
     NSNumber *minDateVal = sortedDateAndEarningsArray[0][@(CPTScatterPlotFieldX).description];
     NSNumber *maxWageVal = dateAndEarningsArraySortedByWage[dateAndEarningsArray.count - 1][@(CPTScatterPlotFieldY).description];
     
+    // Setup scatter plot space
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)newGraph.defaultPlotSpace;
+    NSTimeInterval xLow       = -oneDay * 1.5;
+    NSTimeInterval yLow       = [maxWageVal doubleValue] / -20.0;
+    
     double maxXVal = oneDay * 31.0;
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(xLow) length:CPTDecimalFromDouble((oneDay * 31.0) - xLow)];
     plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(yLow) length:CPTDecimalFromDouble([maxWageVal doubleValue] + 5.0 - yLow)];
-    
+
     int labelWidth = 80;
     int numLabelsToFit = self.resultsScatterPlot.frame.size.width / labelWidth;
     
     // Axes
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)newGraph.axisSet;
     CPTXYAxis *x          = axisSet.xAxis;
+    x.visibleRange   = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInteger(0)
+                                                        length:CPTDecimalFromInteger((oneDay * 31.0) - xLow)];
+    x.gridLinesRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInteger(0)
+                                                        length:CPTDecimalFromInteger((oneDay * 31.0) - xLow)];
+    
     x.majorIntervalLength         = CPTDecimalFromDouble(maxXVal / numLabelsToFit);
     x.orthogonalCoordinateDecimal = CPTDecimalFromDouble(2.0);
     x.minorTicksPerInterval       = 0;
@@ -146,6 +151,11 @@
     x.labelFormatter            = timeFormatter;
     
     CPTXYAxis *y = axisSet.yAxis;
+    y.visibleRange   = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInteger(0)
+                                                    length:CPTDecimalFromInteger([maxWageVal doubleValue] + 5.0 - yLow)];
+    y.gridLinesRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromInteger(0)
+                                                    length:CPTDecimalFromInteger([maxWageVal doubleValue] + 5.0 - yLow)];
+    
     y.majorIntervalLength         = CPTDecimalFromDouble([maxWageVal doubleValue]/20.0);
     y.minorTicksPerInterval       = 2;
     y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(oneDay);
