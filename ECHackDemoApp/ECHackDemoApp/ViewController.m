@@ -104,17 +104,20 @@
     [dateFormatter setDateFormat:@"HH:mm"];
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     
+    //Format the Seconds label
+    NSDateFormatter *dateFormatterSeconds = [[NSDateFormatter alloc] init];
+    [dateFormatterSeconds setDateFormat:@"ss"];
+    [dateFormatterSeconds setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
+    
     //Turn the timestamp from the timer into a string
     NSString *timeString = [dateFormatter stringFromDate:timerDate];
+    NSString *secondsString = [dateFormatterSeconds stringFromDate:timerDate];
     self.timeWorkedLabel.text = timeString;
+    self.timeWorkedSecondsLabel.text = secondsString;
     pauseTimeInterval = elapsedTime;
     
-    //Grab the seconds from the timer
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"ss"];
-    
     //If the time is odd, remove the : from the time, creating a blinking : effect
-    if ([[df stringFromDate:timerDate] integerValue] % 2) {
+    if ([[dateFormatterSeconds stringFromDate:timerDate] integerValue] % 2) {
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@":"
                                                                                          withString:@" "];
     }

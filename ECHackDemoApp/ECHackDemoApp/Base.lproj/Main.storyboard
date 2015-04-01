@@ -97,8 +97,8 @@
                                 <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
-                                <rect key="frame" x="217" y="461" width="166" height="65"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="645-jf-INe">
+                                <rect key="frame" x="214" y="464" width="172" height="62"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="4" maxX="10" maxY="4"/>
                                 <state key="normal" title="Clock In">
@@ -108,6 +108,23 @@
                                     <action selector="onClockButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MMC-nP-K2w"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDu-4s-VaT">
+                                <rect key="frame" x="409" y="254" width="34" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="nfk-kJ-6TU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nfk-kJ-6TU"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="63" y="253" width="274" height="94"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -133,6 +150,8 @@
                             <constraint firstAttribute="centerX" secondItem="Bsx-VZ-Fro" secondAttribute="centerX" id="gzb-U9-q4r"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="645-jf-INe" secondAttribute="bottom" constant="25" id="jPF-d8-WA5"/>
                             <constraint firstItem="jKI-7K-lDP" firstAttribute="leading" secondItem="lCv-29-OLc" secondAttribute="trailing" id="jzF-vg-qMp"/>
+                            <constraint firstItem="sDu-4s-VaT" firstAttribute="baseline" secondItem="Bsx-VZ-Fro" secondAttribute="baseline" id="otZ-oh-5jp"/>
+                            <constraint firstItem="sDu-4s-VaT" firstAttribute="leading" secondItem="Bsx-VZ-Fro" secondAttribute="trailing" constant="8" id="s6O-2Z-Xva"/>
                             <constraint firstItem="Zer-u9-d5i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.2" id="sTO-ZG-vWv"/>
                             <constraint firstItem="lCv-29-OLc" firstAttribute="baseline" secondItem="mHa-d7-Mwf" secondAttribute="baseline" id="zwe-cm-qDr"/>
                         </constraints>
@@ -153,6 +172,7 @@
                         <outlet property="monthLabel" destination="YIk-Fe-zuw" id="HYW-i1-Rqo"/>
                         <outlet property="onClockButtonPressed" destination="645-jf-INe" id="z0U-QX-XmO"/>
                         <outlet property="timeWorkedLabel" destination="Bsx-VZ-Fro" id="ltw-GK-TyL"/>
+                        <outlet property="timeWorkedSecondsLabel" destination="sDu-4s-VaT" id="6qJ-jd-DL4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

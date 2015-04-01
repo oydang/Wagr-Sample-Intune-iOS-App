@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeWorkedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeWorkedSecondsLabel;
 
 @property (strong, nonatomic) NSTimer *timeWorkedTimer; // Store the timer that fires after a certain time
 @property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button
