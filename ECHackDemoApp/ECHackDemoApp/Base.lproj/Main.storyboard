@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6az-Xd-FxY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6az-Xd-FxY">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -237,14 +237,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iti-dL-Zve" userLabel="Content View">
                                 <rect key="frame" x="0.0" y="138" width="600" height="413"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PnA-px-IT3" customClass="CPTGraphHostingView">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBN-Pb-cja">
-                                        <rect key="frame" x="526" y="377" width="54" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBN-Pb-cja">
+                                        <rect key="frame" x="238" y="170" width="124" height="36"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Export">
+                                        <state key="normal" title="Export to Excel">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -254,25 +250,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="TBN-Pb-cja" secondAttribute="trailing" constant="20" id="0xD-hO-KFs"/>
-                                    <constraint firstItem="TBN-Pb-cja" firstAttribute="top" secondItem="PnA-px-IT3" secondAttribute="bottom" id="9fi-3Y-spi"/>
-                                    <constraint firstAttribute="bottom" secondItem="TBN-Pb-cja" secondAttribute="bottom" id="LP1-pU-HQK"/>
-                                    <constraint firstItem="PnA-px-IT3" firstAttribute="leading" secondItem="Iti-dL-Zve" secondAttribute="leading" id="NiP-Hh-1Ai"/>
-                                    <constraint firstItem="TBN-Pb-cja" firstAttribute="leading" secondItem="Iti-dL-Zve" secondAttribute="leading" constant="20" symbolic="YES" id="UNa-Hr-seu"/>
-                                    <constraint firstAttribute="trailing" secondItem="PnA-px-IT3" secondAttribute="trailing" id="aQf-Ju-eaV"/>
-                                    <constraint firstItem="PnA-px-IT3" firstAttribute="top" secondItem="Iti-dL-Zve" secondAttribute="top" id="ezT-lP-d0G"/>
-                                    <constraint firstAttribute="bottom" secondItem="PnA-px-IT3" secondAttribute="bottom" constant="24" id="fB3-Cv-OGJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="TBN-Pb-cja" secondAttribute="trailing" constant="15" id="rCL-si-oTJ"/>
-                                    <constraint firstItem="PnA-px-IT3" firstAttribute="trailing" secondItem="TBN-Pb-cja" secondAttribute="trailing" constant="15" id="xN3-HG-QJs"/>
+                                    <constraint firstAttribute="centerX" secondItem="TBN-Pb-cja" secondAttribute="centerX" id="EpR-qe-VfZ"/>
+                                    <constraint firstAttribute="centerY" secondItem="TBN-Pb-cja" secondAttribute="centerY" id="S9b-W3-yiH"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="fB3-Cv-OGJ"/>
-                                        <exclude reference="xN3-HG-QJs"/>
-                                        <exclude reference="UNa-Hr-seu"/>
-                                        <exclude reference="rCL-si-oTJ"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -294,7 +274,6 @@
                     <connections>
                         <outlet property="contentView" destination="Iti-dL-Zve" id="9kQ-iM-zkO"/>
                         <outlet property="exportButton" destination="TBN-Pb-cja" id="9QN-nD-0pV"/>
-                        <outlet property="resultsScatterPlot" destination="PnA-px-IT3" id="XbZ-5l-bQX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPJ-Lz-rw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
