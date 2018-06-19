@@ -2,15 +2,16 @@
 //  SettingsViewController.h
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController{
-    int hourlyWage;
-    int dollarsInCents;
-    int cents;
+@interface SettingsViewController : UIViewController
+{
+    unsigned int hourlyWage;
+    unsigned int dollarsInCents;
+    unsigned int cents;
 }
 - (IBAction)onLinkPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *userName;

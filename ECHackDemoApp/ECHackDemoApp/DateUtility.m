@@ -2,7 +2,7 @@
 //  DateUtility.m
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import "DateUtility.h"
@@ -10,7 +10,7 @@
 
 @implementation DateUtility
 
-+(int)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
++ (unsigned int)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime
 {
     NSDate *fromDate;
     NSDate *toDate;
@@ -25,7 +25,7 @@
     NSDateComponents *difference = [calendar components:NSCalendarUnitDay
                                                fromDate:fromDate toDate:toDate options:0];
     
-    return [difference day];
+    return (unsigned int)[difference day];
 }
 
 @end

@@ -2,7 +2,7 @@
 //  ViewController.m
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import "ViewController.h"
@@ -17,7 +17,8 @@
 @synthesize calendarData;
 
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     timerRunning = NO;
@@ -39,38 +40,40 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
-
-- (IBAction)onClockButtonPressed:(UIButton *)sender {
-    if (!timerRunning){
+- (IBAction)onClockButtonPressed:(UIButton *)sender
+{
+    if (!timerRunning)
+    {
         [UIView performWithoutAnimation:^{
             [self.clockButton setTitle:@"Clock Out" forState:UIControlStateNormal];
         }];
-        if (hourlyWage == 0) {
+        if (hourlyWage == 0)
+        {
             hourlyWage = 725;
         }
-        else{
+        else
+        {
             hourlyWage = [Settings hourlyWage];            
         }
 
-        
         timerRunning = YES;
         
-        self.startDate = [NSDate date] ;
+        self.startDate = [NSDate date];
         self.startDate = [self.startDate dateByAddingTimeInterval:((-1)*(pauseTimeInterval))];
         self.timeWorkedTimer = [NSTimer scheduledTimerWithTimeInterval:1.0/10.0 target:self selector:@selector(updateUI) userInfo:nil repeats:YES];
     }
-    else{
+    else
+    {
         [UIView performWithoutAnimation:^{
             [self.clockButton setTitle:@"Clock In" forState:UIControlStateNormal];
         }];
-        
-        
+
         timerRunning = NO;
         [self.calendarData recordCalendarData:self.startDate wage:hourlyWage timeWorked:self.timeWorkedLabel.text];
         [self.calendarData saveCalendarData];
@@ -81,18 +84,17 @@
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@" "
                                                                                          withString:@":"];
     }
-    
-
 }
 
-- (void) updateUI {
+- (void) updateUI
+{
     [self updateTimer];
     [self updateMoneyEarned];
 }
 
 
--(void) updateTimer {
-    
+-(void) updateTimer
+{
     NSDate *currentDate = [NSDate date];
     
     elapsedTime = [currentDate timeIntervalSinceDate:self.startDate];
@@ -116,20 +118,22 @@
     pauseTimeInterval = elapsedTime;
     
     //If the time is odd, remove the : from the time, creating a blinking : effect
-    if ([[dateFormatterSeconds stringFromDate:timerDate] integerValue] % 2) {
+    if ([[dateFormatterSeconds stringFromDate:timerDate] integerValue] % 2)
+    {
         self.timeWorkedLabel.text = [self.timeWorkedLabel.text stringByReplacingOccurrencesOfString:@":"
                                                                                          withString:@" "];
     }
 }
 
 
--(void) updateMoneyEarned {
+-(void) updateMoneyEarned
+{
     double wagePerSecond = hourlyWage / 3600.0;
     
     moneyEarned = wagePerSecond * elapsedTime;
     
-    self.moneyMadeCentsLabel.text = [NSString stringWithFormat:@"%02d", (moneyEarned % 100)];
-    self.moneyMadeDollarsLabel.text = [NSString stringWithFormat:@"%d", (moneyEarned / 100)];
+    self.moneyMadeCentsLabel.text = [NSString stringWithFormat:@"%02u", (moneyEarned % 100)];
+    self.moneyMadeDollarsLabel.text = [NSString stringWithFormat:@"%u", (moneyEarned / 100)];
 }
 
 

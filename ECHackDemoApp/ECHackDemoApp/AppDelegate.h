@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

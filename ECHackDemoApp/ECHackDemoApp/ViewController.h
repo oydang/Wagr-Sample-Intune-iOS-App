@@ -2,7 +2,7 @@
 //  ViewController.h
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,8 +12,8 @@
     NSTimeInterval pauseTimeInterval;
     NSTimeInterval elapsedTime;
     BOOL timerRunning;
-    int moneyEarned;
-    int hourlyWage;
+    unsigned int moneyEarned;
+    unsigned int hourlyWage;
 }
 
 @property CalendarData *calendarData; //NSMutableDictionary *calendarData;

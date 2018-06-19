@@ -2,7 +2,7 @@
 //  CalendarData.h
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -12,10 +12,10 @@
 }
 
 @property NSMutableDictionary *calendarDictionary;
-- (void) loadCalendarData;
-- (void) recordCalendarData: (NSDate*)date wage:(double)wage timeWorked: (NSString*)timeWorked;
-- (void) saveCalendarData;
-- (UIDocumentInteractionController*) getDocumentInteractionController;
-- (BOOL) saveDataFromFile: (NSString*) filePath;
-- (NSString*) getFileForExport; 
+- (void)loadCalendarData;
+- (void)recordCalendarData:(NSDate*)date wage:(double)wage timeWorked:(NSString*)timeWorked;
+- (void)saveCalendarData;
+- (UIDocumentInteractionController*)getDocumentInteractionController;
+- (BOOL)saveDataFromFile:(NSString*)filePath;
+- (NSString*)getFileForExport;
 @end

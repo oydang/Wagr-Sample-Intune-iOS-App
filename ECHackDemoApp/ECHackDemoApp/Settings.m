@@ -2,17 +2,18 @@
 //  Settings.m
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import "Settings.h"
 
-static int hourlyWage;
+static unsigned int hourlyWage;
 
 @implementation Settings
-+(int)hourlyWage {return hourlyWage;}
++ (unsigned int)hourlyWage { return hourlyWage; }
 
-+(void)setHourlyWage: (int) wage{
++ (void)setHourlyWage:(unsigned int)wage
+{
     hourlyWage = wage;
 }
 

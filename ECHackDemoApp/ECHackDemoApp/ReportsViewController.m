@@ -2,7 +2,7 @@
 //  ReportsViewController.m
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
 //
 
 #import "ReportsViewController.h"
@@ -18,8 +18,8 @@
 
 @implementation ReportsViewController
 
-- (void)viewDidAppear:(BOOL)animated {
-    
+- (void)viewDidAppear:(BOOL)animated
+{
     [super viewDidAppear:animated];
     
     // Initialize the calendar data
@@ -27,26 +27,27 @@
     
     }
 
-- (void)viewDidLoad {
-    
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-
 }
 
 #pragma mark -
 #pragma mark Plot Data Source Methods
 
-
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller{
+- (UIViewController *)documentInteractionControllerViewControllerForPreview:(UIDocumentInteractionController *)controller
+{
     return self;
 }
 
-- (IBAction)onExportButtonPressed:(UIButton *)sender {
+- (IBAction)onExportButtonPressed:(UIButton *)sender
+{
     self.controller =[self.calendarData getDocumentInteractionController];
     [self.controller setDelegate: self];
     [self.controller presentOpenInMenuFromRect:self.exportButton.frame
@@ -54,4 +55,5 @@
                       animated:YES];
    
 }
+
 @end
