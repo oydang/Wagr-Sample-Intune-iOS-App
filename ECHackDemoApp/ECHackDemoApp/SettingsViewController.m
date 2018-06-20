@@ -2,11 +2,11 @@
 //  SettingsViewController.m
 //  Wagr
 //
-//  Copyright (c) Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import "SettingsViewController.h"
-#import "ViewController.h"
+#import "ClockInViewController.h"
 #import "Settings.h"
 
 @interface SettingsViewController ()
@@ -37,26 +37,44 @@
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://docs.microsoft.com/intune/app-wrapper-prepare-ios"]];
 }
 
+- (IBAction)onNameEntered:(UITextField *)sender
+{
+    [Settings setWorkerName:self.nameTextField.text];
+}
+
+
 - (IBAction)onDollarsWageEntered:(UITextField *)sender
 {
-    dollarsInCents = [self.dollarWage.text intValue] * 100;
-    hourlyWage = dollarsInCents + cents;
+    unsigned int dollarsInCents = [self.dollarWageTextField.text intValue] * 100;
+    unsigned int hourlyWage = dollarsInCents + [self.centsWageTextField.text intValue];
     [Settings setHourlyWage:hourlyWage];
     NSLog(@"Hourly Wage: %d", hourlyWage);
 }
 
 - (IBAction)onCentsWageEntered:(UITextField *)sender
 {
-    cents = [self.centsWage.text intValue];
-    hourlyWage = dollarsInCents + cents;
+    unsigned int cents = [self.centsWageTextField.text intValue];
+    unsigned int hourlyWage = ([self.dollarWageTextField.text intValue] * 100) + cents;
     [Settings setHourlyWage:hourlyWage];
     NSLog(@"Hourly Wage: %d", hourlyWage);
 }
 
+- (IBAction)onEmailEntered:(UITextField *)sender
+{
+    [Settings setWorkerEmail:self.emailTextField.text];
+}
+
+- (IBAction)onPhoneEntered:(UITextField *)sender
+{
+    [Settings setWorkerPhone:self.phoneTextField.text];
+}
+
 -(void)dismissKeyboard
 {
-    [self.userName resignFirstResponder];
-    [self.dollarWage resignFirstResponder];
-    [self.centsWage resignFirstResponder];
+    [self.nameTextField resignFirstResponder];
+    [self.dollarWageTextField resignFirstResponder];
+    [self.centsWageTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+    [self.phoneTextField resignFirstResponder];
 }
 @end

@@ -1,18 +1,19 @@
 //
-//  ViewController.m
+//  ClockInViewController.m
 //  Wagr
 //
-//  Copyright (c) Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ClockInViewController.h"
 #import "Settings.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface ViewController ()
+@interface ClockInViewController ()
 
 @end
-@implementation ViewController
+
+@implementation ClockInViewController
 
 @synthesize calendarData;
 
@@ -37,6 +38,8 @@
     self.clockButton.layer.borderWidth=1.0f;
     self.clockButton.layer.borderColor=[[UIColor blueColor] CGColor];
     self.clockButton.layer.cornerRadius = 12;
+    
+    self.currentWorkerLabel.text = [Settings workerName];
     
 }
 
@@ -90,6 +93,7 @@
 {
     [self updateTimer];
     [self updateMoneyEarned];
+    self.currentWorkerLabel.text = [Settings workerName];
 }
 
 

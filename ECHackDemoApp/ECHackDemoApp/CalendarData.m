@@ -2,14 +2,14 @@
 //  CalendarData.m
 //  Wagr
 //
-//  Copyright (c) Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 @import UIKit;
 #import "CalendarData.h"
 #import "DateUtility.h"
 
-@implementation CalendarData{}
+@implementation CalendarData
 
 @synthesize calendarDictionary;
 

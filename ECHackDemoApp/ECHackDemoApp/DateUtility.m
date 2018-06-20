@@ -2,11 +2,10 @@
 //  DateUtility.m
 //  Wagr
 //
-//  Copyright (c) Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import "DateUtility.h"
-
 
 @implementation DateUtility
 
@@ -17,10 +16,15 @@
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
     
-    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&fromDate
-                 interval:NULL forDate:fromDateTime];
-    [calendar rangeOfUnit:NSCalendarUnitDay startDate:&toDate
-                 interval:NULL forDate:toDateTime];
+    [calendar rangeOfUnit:NSCalendarUnitDay
+                startDate:&fromDate
+                 interval:NULL
+                  forDate:fromDateTime];
+    
+    [calendar rangeOfUnit:NSCalendarUnitDay
+                startDate:&toDate
+                 interval:NULL
+                  forDate:toDateTime];
     
     NSDateComponents *difference = [calendar components:NSCalendarUnitDay
                                                fromDate:fromDate toDate:toDate options:0];

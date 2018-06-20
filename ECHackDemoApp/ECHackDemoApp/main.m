@@ -2,7 +2,7 @@
 //  main.m
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

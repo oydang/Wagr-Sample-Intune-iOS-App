@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  Wagr
 //
-//  Copyright (c) Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import "AppDelegate.h"

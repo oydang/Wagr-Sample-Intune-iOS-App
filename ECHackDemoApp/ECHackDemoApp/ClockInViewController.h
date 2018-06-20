@@ -1,14 +1,15 @@
 //
-//  ViewController.h
+//  ClockInViewController.h
 //  Wagr
 //
-//  Copyright (c) Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "CalendarData.h"
 
-@interface ViewController : UIViewController{
+@interface ClockInViewController : UIViewController
+{
     NSTimeInterval pauseTimeInterval;
     NSTimeInterval elapsedTime;
     BOOL timerRunning;
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeWorkedSecondsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentWorkerLabel;
 
 @property (strong, nonatomic) NSTimer *timeWorkedTimer; // Store the timer that fires after a certain time
 @property (strong, nonatomic) NSDate *startDate; // Stores the date of the click on the start button
