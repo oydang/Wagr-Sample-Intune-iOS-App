@@ -13,13 +13,13 @@
 		1DF624011ACB0F2600E23CC5 /* DateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF624001ACB0F2600E23CC5 /* DateUtility.m */; };
 		2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */; };
 		2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1AA1ACA030D00C6EB6D /* Settings.m */; };
+		45CE342E20DBFBE5006F8D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */; };
 		82251AFE1AC989B7001F6DD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251AFD1AC989B7001F6DD4 /* main.m */; };
 		82251B011AC989B7001F6DD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B001AC989B7001F6DD4 /* AppDelegate.m */; };
 		82251B041AC989B7001F6DD4 /* Wagr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82251B021AC989B7001F6DD4 /* Wagr.xcdatamodeld */; };
 		82251B071AC989B7001F6DD4 /* ClockInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B061AC989B7001F6DD4 /* ClockInViewController.m */; };
 		82251B0A1AC989B7001F6DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82251B081AC989B7001F6DD4 /* Main.storyboard */; };
 		82251B0C1AC989B7001F6DD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82251B0B1AC989B7001F6DD4 /* Images.xcassets */; };
-		82251B0F1AC989B7001F6DD4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82251B0D1AC989B7001F6DD4 /* LaunchScreen.xib */; };
 		C3805CF31AC9F94B00F3BBDD /* CalendarData.m in Sources */ = {isa = PBXBuildFile; fileRef = C3805CF21AC9F94B00F3BBDD /* CalendarData.m */; };
 		C39F17DE1AC9A6D0007FA15E /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C39F17DD1AC9A6D0007FA15E /* UserData.plist */; };
 /* End PBXBuildFile section */
@@ -35,6 +35,7 @@
 		2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2A7DC1A91ACA030D00C6EB6D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Settings.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2A7DC1AA1ACA030D00C6EB6D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Settings.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82251AF81AC989B7001F6DD4 /* Wagr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wagr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82251AFC1AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82251AFD1AC989B7001F6DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -45,7 +46,6 @@
 		82251B061AC989B7001F6DD4 /* ClockInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ClockInViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		82251B091AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82251B0B1AC989B7001F6DD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		82251B0E1AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C3805CF11AC9F94B00F3BBDD /* CalendarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalendarData.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		C3805CF21AC9F94B00F3BBDD /* CalendarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CalendarData.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C39F17DD1AC9A6D0007FA15E /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
@@ -102,7 +102,6 @@
 				1DF623FF1ACB0F2600E23CC5 /* DateUtility.h */,
 				1DF624001ACB0F2600E23CC5 /* DateUtility.m */,
 				82251B0B1AC989B7001F6DD4 /* Images.xcassets */,
-				82251B0D1AC989B7001F6DD4 /* LaunchScreen.xib */,
 				82251B081AC989B7001F6DD4 /* Main.storyboard */,
 				1D392E7C1AC9B31E00859A02 /* ReportsViewController.h */,
 				1D392E7D1AC9B31E00859A02 /* ReportsViewController.m */,
@@ -113,6 +112,7 @@
 				82251AFB1AC989B7001F6DD4 /* Supporting Files */,
 				C39F17DD1AC9A6D0007FA15E /* UserData.plist */,
 				82251B021AC989B7001F6DD4 /* Wagr.xcdatamodeld */,
+				45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */,
 			);
 			name = Wagr;
 			path = ECHackDemoApp;
@@ -186,8 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				82251B0A1AC989B7001F6DD4 /* Main.storyboard in Resources */,
+				45CE342E20DBFBE5006F8D73 /* LaunchScreen.storyboard in Resources */,
 				C39F17DE1AC9A6D0007FA15E /* UserData.plist in Resources */,
-				82251B0F1AC989B7001F6DD4 /* LaunchScreen.xib in Resources */,
 				82251B0C1AC989B7001F6DD4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,14 +220,6 @@
 				82251B091AC989B7001F6DD4 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		82251B0D1AC989B7001F6DD4 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				82251B0E1AC989B7001F6DD4 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -279,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -326,7 +318,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -341,7 +333,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ECHackDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -351,6 +343,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Wagr;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -361,7 +354,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ECHackDemoApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -371,6 +364,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Wagr;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
