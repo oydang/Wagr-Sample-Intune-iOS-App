@@ -128,17 +128,10 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXj-WF-2hc">
-                                <rect key="frame" x="116.5" y="161" width="142" height="42"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="35"/>
-                                <color key="textColor" red="0.38039215686274508" green="0.24705882352941178" blue="0.69019607843137254" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="oVg-BQ-pR0" firstAttribute="baseline" secondItem="mHa-d7-Mwf" secondAttribute="baseline" id="6FI-ib-fS3"/>
-                            <constraint firstItem="WXj-WF-2hc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A7S-RJ-fiT"/>
                             <constraint firstItem="mHa-d7-Mwf" firstAttribute="top" secondItem="Bsx-VZ-Fro" secondAttribute="bottom" constant="10" id="Fs0-PJ-etw"/>
                             <constraint firstItem="oVg-BQ-pR0" firstAttribute="leading" secondItem="mHa-d7-Mwf" secondAttribute="trailing" id="LpJ-2e-plo"/>
                             <constraint firstItem="mHa-d7-Mwf" firstAttribute="leading" secondItem="jKI-7K-lDP" secondAttribute="trailing" id="Oha-CJ-Et8"/>
@@ -162,7 +155,6 @@
                             <constraint firstAttribute="centerX" secondItem="Bsx-VZ-Fro" secondAttribute="centerX" id="gzb-U9-q4r"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="645-jf-INe" secondAttribute="bottom" constant="25" id="jPF-d8-WA5"/>
                             <constraint firstItem="jKI-7K-lDP" firstAttribute="leading" secondItem="lCv-29-OLc" secondAttribute="trailing" id="jzF-vg-qMp"/>
-                            <constraint firstItem="WXj-WF-2hc" firstAttribute="top" secondItem="TuH-ZK-TkS" secondAttribute="bottom" constant="15" id="nfS-La-k2v"/>
                             <constraint firstItem="sDu-4s-VaT" firstAttribute="baseline" secondItem="Bsx-VZ-Fro" secondAttribute="baseline" id="otZ-oh-5jp"/>
                             <constraint firstItem="sDu-4s-VaT" firstAttribute="leading" secondItem="Bsx-VZ-Fro" secondAttribute="trailing" constant="8" id="s6O-2Z-Xva"/>
                             <constraint firstItem="Zer-u9-d5i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.15" id="sTO-ZG-vWv"/>
@@ -180,7 +172,6 @@
                         <outlet property="clockButton" destination="645-jf-INe" id="JCc-QZ-81m"/>
                         <outlet property="currentDateLabel" destination="zJH-tZ-zO7" id="XU0-Sm-CbV"/>
                         <outlet property="currentMonthLabel" destination="YIk-Fe-zuw" id="TaW-Zv-v4b"/>
-                        <outlet property="currentWorkerLabel" destination="WXj-WF-2hc" id="NRf-nK-dHt"/>
                         <outlet property="dayLabel" destination="zJH-tZ-zO7" id="CDj-1a-cer"/>
                         <outlet property="moneyMadeCentsLabel" destination="oVg-BQ-pR0" id="FyA-Zj-iAC"/>
                         <outlet property="moneyMadeDollarsLabel" destination="jKI-7K-lDP" id="kAC-ko-cdw"/>

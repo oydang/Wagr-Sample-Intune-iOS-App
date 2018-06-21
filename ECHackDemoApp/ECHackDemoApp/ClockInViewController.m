@@ -39,8 +39,6 @@
     self.clockButton.layer.borderColor=[[UIColor blueColor] CGColor];
     self.clockButton.layer.cornerRadius = 12;
     
-    self.currentWorkerLabel.text = [Settings workerName];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,7 +91,6 @@
 {
     [self updateTimer];
     [self updateMoneyEarned];
-    self.currentWorkerLabel.text = [Settings workerName];
 }
 
 
