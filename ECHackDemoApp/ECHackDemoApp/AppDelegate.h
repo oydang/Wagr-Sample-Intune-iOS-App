@@ -7,8 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import <IntuneMAM/IntuneMAM.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, IntuneMAMPolicyDelegate, IntuneMAMEnrollmentDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

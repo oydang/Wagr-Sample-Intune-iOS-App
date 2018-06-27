@@ -361,13 +361,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worker name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2z-Yo-KI2">
-                                <rect key="frame" x="26" y="40" width="282.5" height="57.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <rect key="frame" x="26" y="40" width="254.5" height="51.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.14117647058823529" green="0.6705882352941176" blue="0.16862745098039217" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="John Doe" minimumFontSize="37" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qnO-uX-2rJ">
-                                <rect key="frame" x="26" y="102.5" width="154.5" height="44"/>
+                                <rect key="frame" x="26" y="96.5" width="154.5" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -375,18 +375,18 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wage:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1t-Tp-YEI">
-                                <rect key="frame" x="26" y="161.5" width="131.5" height="57.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <rect key="frame" x="26" y="155.5" width="118.5" height="51.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.31447802367367256" green="0.66086786985397339" blue="0.2496476021422413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="MPx-Na-QMl">
-                                <rect key="frame" x="26" y="234" width="21" height="35"/>
+                                <rect key="frame" x="26" y="222" width="21" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="9" placeholder="0" textAlignment="right" minimumFontSize="37" translatesAutoresizingMaskIntoConstraints="NO" id="iVk-BD-oGk">
-                                <rect key="frame" x="57" y="226.5" width="25" height="44"/>
+                                <rect key="frame" x="57" y="214.5" width="25" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -394,12 +394,12 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="." textAlignment="right" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="4Pf-bC-I08">
-                                <rect key="frame" x="82" y="233" width="13" height="36"/>
+                                <rect key="frame" x="82" y="221" width="13" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="25" placeholder="00" textAlignment="right" minimumFontSize="37" translatesAutoresizingMaskIntoConstraints="NO" id="6sw-dE-vaq">
-                                <rect key="frame" x="95" y="226.5" width="46" height="44"/>
+                                <rect key="frame" x="95" y="214.5" width="46" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -407,19 +407,19 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/ hour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJ4-cG-dV7">
-                                <rect key="frame" x="151" y="234.5" width="72" height="34.5"/>
+                                <rect key="frame" x="151" y="222.5" width="72" height="34.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worker email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxR-9S-8D3">
-                                <rect key="frame" x="26" y="284" width="270.5" height="57.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <rect key="frame" x="26" y="272" width="243.5" height="51.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.6705882353" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="john@contoso.com" minimumFontSize="37" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3eB-mG-FD3">
-                                <rect key="frame" x="26" y="346.5" width="302" height="44"/>
+                                <rect key="frame" x="26" y="328.5" width="302" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -427,19 +427,30 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Worker phone:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjW-vW-tlh">
-                                <rect key="frame" x="26" y="405.5" width="297.5" height="57.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <rect key="frame" x="26" y="387.5" width="268" height="51.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="45"/>
                                 <color key="textColor" red="0.14117647059999999" green="0.6705882353" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="(123)456-7890" minimumFontSize="37" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aPx-Fn-hMC">
-                                <rect key="frame" x="26" y="468" width="241" height="44"/>
+                                <rect key="frame" x="26" y="444" width="241" height="44"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="37"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="onPhoneEntered:" destination="y4V-x3-yQn" eventType="editingDidEnd" id="gCX-BB-VJw"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1v-83-4cO">
+                                <rect key="frame" x="121" y="547" width="133" height="56"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="4" maxX="10" maxY="4"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onSignInButtonPressed:" destination="y4V-x3-yQn" eventType="touchUpInside" id="I4n-Pa-QCI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -469,7 +480,9 @@
                             <constraint firstItem="m1t-Tp-YEI" firstAttribute="leading" secondItem="MPx-Na-QMl" secondAttribute="leading" id="jxj-Ql-Ptk"/>
                             <constraint firstItem="6sw-dE-vaq" firstAttribute="baseline" secondItem="iVk-BD-oGk" secondAttribute="baseline" id="mNO-59-NGR"/>
                             <constraint firstItem="aPx-Fn-hMC" firstAttribute="top" secondItem="mjW-vW-tlh" secondAttribute="bottom" constant="5" id="mi2-NO-2cs"/>
+                            <constraint firstItem="X1v-83-4cO" firstAttribute="centerX" secondItem="cI5-8L-6OD" secondAttribute="centerX" id="otx-fq-SQ3"/>
                             <constraint firstItem="m1t-Tp-YEI" firstAttribute="leading" secondItem="b2z-Yo-KI2" secondAttribute="leading" id="pmg-fB-kbD"/>
+                            <constraint firstItem="Fbf-SB-0af" firstAttribute="top" secondItem="X1v-83-4cO" secondAttribute="bottom" constant="15" id="r0V-aB-2qo"/>
                             <constraint firstItem="3eB-mG-FD3" firstAttribute="leading" secondItem="m1t-Tp-YEI" secondAttribute="leading" id="zEK-ba-pZT"/>
                         </constraints>
                     </view>
@@ -480,6 +493,7 @@
                         <outlet property="emailTextField" destination="3eB-mG-FD3" id="oMr-sQ-cLC"/>
                         <outlet property="nameTextField" destination="qnO-uX-2rJ" id="AWC-lY-6YS"/>
                         <outlet property="phoneTextField" destination="aPx-Fn-hMC" id="GrU-kU-F1g"/>
+                        <outlet property="signInButton" destination="X1v-83-4cO" id="Y8h-JR-LiJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ne-fy-739" userLabel="First Responder" sceneMemberID="firstResponder"/>

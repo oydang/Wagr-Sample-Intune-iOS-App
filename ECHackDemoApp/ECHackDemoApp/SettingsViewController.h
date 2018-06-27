@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *centsWageTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+@property (weak, nonatomic) IBOutlet UIButton *signInButton;
 
 
 

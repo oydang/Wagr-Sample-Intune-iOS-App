@@ -13,18 +13,47 @@
 		1DF624011ACB0F2600E23CC5 /* DateUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF624001ACB0F2600E23CC5 /* DateUtility.m */; };
 		2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */; };
 		2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7DC1AA1ACA030D00C6EB6D /* Settings.m */; };
+		45740BD920DC269D00058391 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BD820DC269D00058391 /* MessageUI.framework */; };
+		45740BDB20DC26A300058391 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BDA20DC26A300058391 /* Security.framework */; };
+		45740BDD20DC26AA00058391 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BDC20DC26AA00058391 /* MobileCoreServices.framework */; };
+		45740BDF20DC289100058391 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BDE20DC289100058391 /* SystemConfiguration.framework */; };
+		45740BE120DC289B00058391 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BE020DC289B00058391 /* libsqlite3.tbd */; };
+		45740BE320DC28A200058391 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BE220DC28A200058391 /* libc++.tbd */; };
+		45740BE520DC28A800058391 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BE420DC28A800058391 /* ImageIO.framework */; };
+		45740BE720DC28AF00058391 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BE620DC28AF00058391 /* LocalAuthentication.framework */; };
+		45740BE920DC28B600058391 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BE820DC28B600058391 /* AudioToolbox.framework */; };
+		45740BEB20DC28FC00058391 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BEA20DC28FC00058391 /* WebKit.framework */; };
+		459FBB4B20DC4CF6003C741F /* libADAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459FBB4A20DC4CF6003C741F /* libADAL.a */; };
 		45CE342E20DBFBE5006F8D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */; };
+		45F1328920E1452F00682FB0 /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F1328820E1452F00682FB0 /* IntuneMAM.framework */; };
+		45F1328A20E1452F00682FB0 /* IntuneMAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45F1328820E1452F00682FB0 /* IntuneMAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82251AFE1AC989B7001F6DD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251AFD1AC989B7001F6DD4 /* main.m */; };
 		82251B011AC989B7001F6DD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B001AC989B7001F6DD4 /* AppDelegate.m */; };
 		82251B041AC989B7001F6DD4 /* Wagr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82251B021AC989B7001F6DD4 /* Wagr.xcdatamodeld */; };
 		82251B071AC989B7001F6DD4 /* ClockInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B061AC989B7001F6DD4 /* ClockInViewController.m */; };
 		82251B0A1AC989B7001F6DD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82251B081AC989B7001F6DD4 /* Main.storyboard */; };
 		82251B0C1AC989B7001F6DD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82251B0B1AC989B7001F6DD4 /* Images.xcassets */; };
+		A461158F68C3734DE044A89F /* libPods-Wagr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A9FC54E049EFF9AFCDA3AD /* libPods-Wagr.a */; };
 		C3805CF31AC9F94B00F3BBDD /* CalendarData.m in Sources */ = {isa = PBXBuildFile; fileRef = C3805CF21AC9F94B00F3BBDD /* CalendarData.m */; };
 		C39F17DE1AC9A6D0007FA15E /* UserData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C39F17DD1AC9A6D0007FA15E /* UserData.plist */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		459FBB4F20DC53BF003C741F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				45F1328A20E1452F00682FB0 /* IntuneMAM.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		17BB98E6B699FC989781707C /* Pods-Wagr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wagr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wagr/Pods-Wagr.debug.xcconfig"; sourceTree = "<group>"; };
 		1D392E781AC9B1E700859A02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		1D392E7C1AC9B31E00859A02 /* ReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ReportsViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		1D392E7D1AC9B31E00859A02 /* ReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ReportsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -35,7 +64,20 @@
 		2A7DC1A71ACA026D00C6EB6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2A7DC1A91ACA030D00C6EB6D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = Settings.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2A7DC1AA1ACA030D00C6EB6D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Settings.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		45740BD820DC269D00058391 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		45740BDA20DC26A300058391 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		45740BDC20DC26AA00058391 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		45740BDE20DC289100058391 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		45740BE020DC289B00058391 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		45740BE220DC28A200058391 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		45740BE420DC28A800058391 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		45740BE620DC28AF00058391 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		45740BE820DC28B600058391 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		45740BEA20DC28FC00058391 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		45740BEC20DC290D00058391 /* Wagr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wagr.entitlements; sourceTree = SOURCE_ROOT; };
+		459FBB4A20DC4CF6003C741F /* libADAL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libADAL.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45F1328820E1452F00682FB0 /* IntuneMAM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IntuneMAM.framework; sourceTree = "<group>"; };
 		82251AF81AC989B7001F6DD4 /* Wagr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wagr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82251AFC1AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82251AFD1AC989B7001F6DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -46,9 +88,11 @@
 		82251B061AC989B7001F6DD4 /* ClockInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ClockInViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		82251B091AC989B7001F6DD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82251B0B1AC989B7001F6DD4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		84A9FC54E049EFF9AFCDA3AD /* libPods-Wagr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wagr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3805CF11AC9F94B00F3BBDD /* CalendarData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CalendarData.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		C3805CF21AC9F94B00F3BBDD /* CalendarData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CalendarData.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		C39F17DD1AC9A6D0007FA15E /* UserData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserData.plist; sourceTree = "<group>"; };
+		D4915707C285D0941D3CB0FB /* Pods-Wagr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wagr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wagr/Pods-Wagr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +100,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D392E811AC9C1AE00859A02 /* Accelerate.framework in Frameworks */,
+				459FBB4B20DC4CF6003C741F /* libADAL.a in Frameworks */,
+				45740BEB20DC28FC00058391 /* WebKit.framework in Frameworks */,
 				1D392E791AC9B1E700859A02 /* QuartzCore.framework in Frameworks */,
+				45740BE920DC28B600058391 /* AudioToolbox.framework in Frameworks */,
+				45740BE720DC28AF00058391 /* LocalAuthentication.framework in Frameworks */,
+				45740BE520DC28A800058391 /* ImageIO.framework in Frameworks */,
+				45740BE320DC28A200058391 /* libc++.tbd in Frameworks */,
+				45F1328920E1452F00682FB0 /* IntuneMAM.framework in Frameworks */,
+				45740BE120DC289B00058391 /* libsqlite3.tbd in Frameworks */,
+				45740BDF20DC289100058391 /* SystemConfiguration.framework in Frameworks */,
+				45740BDD20DC26AA00058391 /* MobileCoreServices.framework in Frameworks */,
+				45740BDB20DC26A300058391 /* Security.framework in Frameworks */,
+				45740BD920DC269D00058391 /* MessageUI.framework in Frameworks */,
+				1D392E811AC9C1AE00859A02 /* Accelerate.framework in Frameworks */,
+				A461158F68C3734DE044A89F /* libPods-Wagr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,18 +124,41 @@
 		1D392E771AC9B0F000859A02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				459FBB4A20DC4CF6003C741F /* libADAL.a */,
+				45740BEA20DC28FC00058391 /* WebKit.framework */,
+				45740BE820DC28B600058391 /* AudioToolbox.framework */,
+				45740BE620DC28AF00058391 /* LocalAuthentication.framework */,
+				45740BE420DC28A800058391 /* ImageIO.framework */,
+				45740BE220DC28A200058391 /* libc++.tbd */,
+				45740BE020DC289B00058391 /* libsqlite3.tbd */,
+				45740BDE20DC289100058391 /* SystemConfiguration.framework */,
+				45740BDC20DC26AA00058391 /* MobileCoreServices.framework */,
+				45740BDA20DC26A300058391 /* Security.framework */,
+				45740BD820DC269D00058391 /* MessageUI.framework */,
 				1D392E801AC9C1AE00859A02 /* Accelerate.framework */,
 				1D392E781AC9B1E700859A02 /* QuartzCore.framework */,
+				84A9FC54E049EFF9AFCDA3AD /* libPods-Wagr.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59D8B4FAF660187C4E3C2779 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				17BB98E6B699FC989781707C /* Pods-Wagr.debug.xcconfig */,
+				D4915707C285D0941D3CB0FB /* Pods-Wagr.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		82251AEF1AC989B7001F6DD4 = {
 			isa = PBXGroup;
 			children = (
+				45F1328820E1452F00682FB0 /* IntuneMAM.framework */,
 				82251AFA1AC989B7001F6DD4 /* Wagr */,
 				82251AF91AC989B7001F6DD4 /* Products */,
 				1D392E771AC9B0F000859A02 /* Frameworks */,
+				59D8B4FAF660187C4E3C2779 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +173,7 @@
 		82251AFA1AC989B7001F6DD4 /* Wagr */ = {
 			isa = PBXGroup;
 			children = (
+				45740BEC20DC290D00058391 /* Wagr.entitlements */,
 				82251AFF1AC989B7001F6DD4 /* AppDelegate.h */,
 				82251B001AC989B7001F6DD4 /* AppDelegate.m */,
 				C3805CF11AC9F94B00F3BBDD /* CalendarData.h */,
@@ -134,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82251B1E1AC989B7001F6DD4 /* Build configuration list for PBXNativeTarget "Wagr" */;
 			buildPhases = (
+				525349EC0AA5C094FDDE11CA /* [CP] Check Pods Manifest.lock */,
 				82251AF41AC989B7001F6DD4 /* Sources */,
 				82251AF61AC989B7001F6DD4 /* Resources */,
 				82251AF51AC989B7001F6DD4 /* Frameworks */,
+				459FBB4F20DC53BF003C741F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -159,6 +242,11 @@
 					82251AF71AC989B7001F6DD4 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = UBF8T346G9;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -193,6 +281,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		525349EC0AA5C094FDDE11CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wagr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82251AF41AC989B7001F6DD4 /* Sources */ = {
@@ -328,10 +437,17 @@
 		};
 		82251B1F1AC989B7001F6DD4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17BB98E6B699FC989781707C /* Pods-Wagr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wagr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ECHackDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -340,7 +456,7 @@
 					"$(PROJECT_DIR)",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.Wagr;
 				PRODUCT_NAME = Wagr;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -349,10 +465,17 @@
 		};
 		82251B201AC989B7001F6DD4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4915707C285D0941D3CB0FB /* Pods-Wagr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wagr.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ECHackDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -361,7 +484,7 @@
 					"$(PROJECT_DIR)",
 				);
 				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.microsoft.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.Wagr;
 				PRODUCT_NAME = Wagr;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

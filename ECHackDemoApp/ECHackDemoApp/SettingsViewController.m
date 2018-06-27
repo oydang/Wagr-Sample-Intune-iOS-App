@@ -8,6 +8,7 @@
 #import "SettingsViewController.h"
 #import "ClockInViewController.h"
 #import "Settings.h"
+#import <IntuneMAM/IntuneMAMEnrollmentManager.h>
 
 @interface SettingsViewController ()
 
@@ -67,6 +68,11 @@
 - (IBAction)onPhoneEntered:(UITextField *)sender
 {
     [Settings setWorkerPhone:self.phoneTextField.text];
+}
+
+- (IBAction)onSignInButtonPressed:(id)sender
+{
+    [[IntuneMAMEnrollmentManager instance] loginAndEnrollAccount:@""];
 }
 
 -(void)dismissKeyboard

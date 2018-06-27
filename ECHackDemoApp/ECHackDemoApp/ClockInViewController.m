@@ -17,7 +17,6 @@
 
 @synthesize calendarData;
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -126,7 +125,6 @@
     }
 }
 
-
 -(void) updateMoneyEarned
 {
     double wagePerSecond = hourlyWage / 3600.0;
@@ -136,6 +134,5 @@
     self.moneyMadeCentsLabel.text = [NSString stringWithFormat:@"%02u", (moneyEarned % 100)];
     self.moneyMadeDollarsLabel.text = [NSString stringWithFormat:@"%u", (moneyEarned / 100)];
 }
-
 
 @end

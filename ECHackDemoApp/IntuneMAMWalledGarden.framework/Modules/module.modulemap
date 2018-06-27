@@ -1,0 +1,6 @@
+framework module IntuneMAMWalledGarden {
+  umbrella header "IntuneMAMWalledGarden.h"
+
+  export *
+  module * { export * }
+}

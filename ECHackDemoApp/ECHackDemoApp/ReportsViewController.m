@@ -11,6 +11,7 @@
 #import "CalendarData.h"
 #import "DateUtility.h"
 #import "Settings.h"
+#import <IntuneMAM/IntuneMAMPolicyManager.h>
 
 @interface ReportsViewController()
 
@@ -118,7 +119,21 @@
         NSError *saveError;
         if ([store executeSaveRequest:request error:&saveError])
         {
-            UIAlertController* successAlert = [UIAlertController alertControllerWithTitle:@"Success!" message:@"Contact was saved successfully. Check your native Contacts app." preferredStyle:UIAlertControllerStyleAlert];
+            NSString *title;
+            NSString *message;
+            
+            if ( [[[IntuneMAMPolicyManager instance] policy] isContactSyncAllowed])
+            {
+                title = @"Success!";
+                message = @"Contact was saved successfully. Check your native Contacts app.";
+            }
+            else
+            {
+                title = @"Failed to save contact";
+                message = @"Saving to your Contacts is not allowed by your IT administrator.";
+            }
+            
+            UIAlertController* successAlert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                                   handler:^(UIAlertAction * action) {}];
             [successAlert addAction:defaultAction];
