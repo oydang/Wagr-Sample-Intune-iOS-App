@@ -24,9 +24,10 @@
 		45740BE920DC28B600058391 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BE820DC28B600058391 /* AudioToolbox.framework */; };
 		45740BEB20DC28FC00058391 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45740BEA20DC28FC00058391 /* WebKit.framework */; };
 		459FBB4B20DC4CF6003C741F /* libADAL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 459FBB4A20DC4CF6003C741F /* libADAL.a */; };
+		45C677D520E5769D003ABBF6 /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C677D420E5769D003ABBF6 /* IntuneMAM.framework */; };
+		45C677D620E5769D003ABBF6 /* IntuneMAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45C677D420E5769D003ABBF6 /* IntuneMAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		45C677DD20E585CB003ABBF6 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C677DC20E585CB003ABBF6 /* AboutViewController.m */; };
 		45CE342E20DBFBE5006F8D73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */; };
-		45F1328920E1452F00682FB0 /* IntuneMAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F1328820E1452F00682FB0 /* IntuneMAM.framework */; };
-		45F1328A20E1452F00682FB0 /* IntuneMAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45F1328820E1452F00682FB0 /* IntuneMAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		82251AFE1AC989B7001F6DD4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251AFD1AC989B7001F6DD4 /* main.m */; };
 		82251B011AC989B7001F6DD4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82251B001AC989B7001F6DD4 /* AppDelegate.m */; };
 		82251B041AC989B7001F6DD4 /* Wagr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82251B021AC989B7001F6DD4 /* Wagr.xcdatamodeld */; };
@@ -39,13 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		459FBB4F20DC53BF003C741F /* Embed Frameworks */ = {
+		45C677D720E5769D003ABBF6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				45F1328A20E1452F00682FB0 /* IntuneMAM.framework in Embed Frameworks */,
+				45C677D620E5769D003ABBF6 /* IntuneMAM.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,8 +77,10 @@
 		45740BEA20DC28FC00058391 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		45740BEC20DC290D00058391 /* Wagr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wagr.entitlements; sourceTree = SOURCE_ROOT; };
 		459FBB4A20DC4CF6003C741F /* libADAL.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libADAL.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45C677D420E5769D003ABBF6 /* IntuneMAM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IntuneMAM.framework; sourceTree = "<group>"; };
+		45C677DB20E585CB003ABBF6 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		45C677DC20E585CB003ABBF6 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		45F1328820E1452F00682FB0 /* IntuneMAM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IntuneMAM.framework; sourceTree = "<group>"; };
 		82251AF81AC989B7001F6DD4 /* Wagr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wagr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82251AFC1AC989B7001F6DD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		82251AFD1AC989B7001F6DD4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -107,7 +110,7 @@
 				45740BE720DC28AF00058391 /* LocalAuthentication.framework in Frameworks */,
 				45740BE520DC28A800058391 /* ImageIO.framework in Frameworks */,
 				45740BE320DC28A200058391 /* libc++.tbd in Frameworks */,
-				45F1328920E1452F00682FB0 /* IntuneMAM.framework in Frameworks */,
+				45C677D520E5769D003ABBF6 /* IntuneMAM.framework in Frameworks */,
 				45740BE120DC289B00058391 /* libsqlite3.tbd in Frameworks */,
 				45740BDF20DC289100058391 /* SystemConfiguration.framework in Frameworks */,
 				45740BDD20DC26AA00058391 /* MobileCoreServices.framework in Frameworks */,
@@ -154,7 +157,7 @@
 		82251AEF1AC989B7001F6DD4 = {
 			isa = PBXGroup;
 			children = (
-				45F1328820E1452F00682FB0 /* IntuneMAM.framework */,
+				45C677D420E5769D003ABBF6 /* IntuneMAM.framework */,
 				82251AFA1AC989B7001F6DD4 /* Wagr */,
 				82251AF91AC989B7001F6DD4 /* Products */,
 				1D392E771AC9B0F000859A02 /* Frameworks */,
@@ -194,6 +197,8 @@
 				C39F17DD1AC9A6D0007FA15E /* UserData.plist */,
 				82251B021AC989B7001F6DD4 /* Wagr.xcdatamodeld */,
 				45CE342D20DBFBE5006F8D73 /* LaunchScreen.storyboard */,
+				45C677DB20E585CB003ABBF6 /* AboutViewController.h */,
+				45C677DC20E585CB003ABBF6 /* AboutViewController.m */,
 			);
 			name = Wagr;
 			path = ECHackDemoApp;
@@ -219,7 +224,7 @@
 				82251AF41AC989B7001F6DD4 /* Sources */,
 				82251AF61AC989B7001F6DD4 /* Resources */,
 				82251AF51AC989B7001F6DD4 /* Frameworks */,
-				459FBB4F20DC53BF003C741F /* Embed Frameworks */,
+				45C677D720E5769D003ABBF6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,6 +319,7 @@
 				2A7DC1A81ACA026D00C6EB6D /* SettingsViewController.m in Sources */,
 				82251B041AC989B7001F6DD4 /* Wagr.xcdatamodeld in Sources */,
 				1D392E7E1AC9B31E00859A02 /* ReportsViewController.m in Sources */,
+				45C677DD20E585CB003ABBF6 /* AboutViewController.m in Sources */,
 				1DF624011ACB0F2600E23CC5 /* DateUtility.m in Sources */,
 				2A7DC1AB1ACA030D00C6EB6D /* Settings.m in Sources */,
 				C3805CF31AC9F94B00F3BBDD /* CalendarData.m in Sources */,

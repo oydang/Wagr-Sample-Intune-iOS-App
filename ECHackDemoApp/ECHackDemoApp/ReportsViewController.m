@@ -11,12 +11,15 @@
 #import "CalendarData.h"
 #import "DateUtility.h"
 #import "Settings.h"
-#import <IntuneMAM/IntuneMAMPolicyManager.h>
+
+static NSString *signInString = @"Sign In";
+static NSString *signOutString = @"Sign Out";
 
 @interface ReportsViewController()
 
 @property (nonatomic, strong) CalendarData *calendarData;
 @property (nonatomic, strong) UIDocumentInteractionController* controller;
+@property BOOL isUserSignedIn;
 
 @end
 
@@ -42,6 +45,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[IntuneMAMEnrollmentManager instance] setDelegate:self];
+    [[IntuneMAMPolicyManager instance] setDelegate:self];
+    
+    if([[IntuneMAMEnrollmentManager instance] enrolledAccount])
+    {
+        _isUserSignedIn = YES;
+        [Settings setWorkerEmail:[[IntuneMAMEnrollmentManager instance] enrolledAccount]];
+    }
+    
+    [self.signInButton setTitle: (self.isUserSignedIn?signOutString:signInString) forState:UIControlStateNormal];
 }
 
 #pragma mark -
@@ -60,12 +73,24 @@
 
 - (IBAction)onExportWagesButtonPressed:(UIButton *)sender
 {
-    self.controller =[self.calendarData getDocumentInteractionController];
+    self.controller = [self.calendarData getDocumentInteractionController];
     [self.controller setDelegate: self];
     [self.controller presentOpenInMenuFromRect:self.exportWagesButton.frame
                         inView:self.view
                       animated:YES];
    
+}
+
+- (IBAction)onSignInButtonPressed:(id)sender
+{
+    if(!self.isUserSignedIn)
+    {
+        [[IntuneMAMEnrollmentManager instance] loginAndEnrollAccount:nil];
+    }
+    else
+    {
+        [[IntuneMAMEnrollmentManager instance] deRegisterAndUnenrollAccount:[[IntuneMAMEnrollmentManager instance] enrolledAccount] withWipe:YES];
+    }
 }
 
 - (IBAction)onExportWorkerDataButtonPressed:(id)sender
@@ -146,5 +171,46 @@
 
     }];
 }
+
+#pragma mark - IntuneMAMEnrollmentDelegate Methods
+
+/**
+ *  Called when an enrollment request operation is completed.
+ *
+ *  @param status status object containing status
+ */
+- (void)enrollmentRequestWithStatus:(IntuneMAMEnrollmentStatus *_Nonnull)status
+{
+    if (status.didSucceed)
+    {
+        _isUserSignedIn = YES;
+        [Settings setWorkerEmail: [[IntuneMAMEnrollmentManager instance] enrolledAccount]];
+    }
+    [self.signInButton setTitle: (self.isUserSignedIn?signOutString:signInString) forState:UIControlStateNormal];
+}
+
+/**
+ *  Called when a un-enroll request operation is completed.
+ *
+ *  @Note: when a user is un-enrolled, the user is also de-registered with the SDK
+ *
+ *  @param status status object containing status
+ */
+- (void)unenrollRequestWithStatus:(IntuneMAMEnrollmentStatus *_Nonnull)status
+{
+    if (status.didSucceed)
+    {
+        _isUserSignedIn = NO;
+    }
+    [self.signInButton setTitle: (self.isUserSignedIn?signOutString:signInString) forState:UIControlStateNormal];
+}
+
+#pragma mark - IntuneMAMPolicyDelegate Methods
+
+- (BOOL) restartApplication
+{
+    return NO;
+}
+
 
 @end

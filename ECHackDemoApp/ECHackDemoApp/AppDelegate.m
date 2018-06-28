@@ -13,12 +13,9 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[IntuneMAMPolicyManager instance] setDelegate:self];
-    [[IntuneMAMEnrollmentManager instance] setDelegate:self];
     return YES;
 }
 
@@ -143,50 +140,5 @@
     }
 }
 
-#pragma mark - Delegate Methods
-
-/**
- *  Called when an enrollment request operation is completed.
- *
- *  @param status status object containing status
- */
-- (void)enrollmentRequestWithStatus:(IntuneMAMEnrollmentStatus *_Nonnull)status
-{
-    if([status didSucceed])
-    {
-        NSLog(@"Yay, Intune enrollment succeeded!");
-    }
-    else
-    {
-        NSLog(@"No, Intune enrollment failed!");
-    }
-}
-
-/**
- *  Called when a MAM policy request operation is completed.
- *
- *  @param status status object containing status
- */
-- (void)policyRequestWithStatus:(IntuneMAMEnrollmentStatus *_Nonnull)status
-{
-    
-}
-
-- (BOOL) restartApplication
-{
-    return FALSE;
-}
-
-/**
- *  Called when a un-enroll request operation is completed.
- *
- *  @Note: when a user is un-enrolled, the user is also de-registered with the SDK
- *
- *  @param status status object containing status
- */
-- (void)unenrollRequestWithStatus:(IntuneMAMEnrollmentStatus *_Nonnull)status
-{
-    
-}
 
 @end

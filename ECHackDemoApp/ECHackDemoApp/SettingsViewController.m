@@ -23,8 +23,20 @@
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(dismissKeyboard)];
+    
+    self.emailTextField.delegate = self;
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
+    
+}
+         
+- (void)viewDidAppear:(BOOL)animated
+{
+    if([[IntuneMAMEnrollmentManager instance] enrolledAccount])
+    {
+        [Settings setWorkerEmail:[[IntuneMAMEnrollmentManager instance] enrolledAccount]];
+        [self.emailTextField setText:[Settings workerEmail]]; // The only setting that could have changed
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -33,10 +45,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)onLinkPressed:(id)sender
-{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://docs.microsoft.com/intune/app-wrapper-prepare-ios"]];
-}
 
 - (IBAction)onNameEntered:(UITextField *)sender
 {
@@ -70,11 +78,6 @@
     [Settings setWorkerPhone:self.phoneTextField.text];
 }
 
-- (IBAction)onSignInButtonPressed:(id)sender
-{
-    [[IntuneMAMEnrollmentManager instance] loginAndEnrollAccount:@""];
-}
-
 -(void)dismissKeyboard
 {
     [self.nameTextField resignFirstResponder];
@@ -83,4 +86,12 @@
     [self.emailTextField resignFirstResponder];
     [self.phoneTextField resignFirstResponder];
 }
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return [[IntuneMAMEnrollmentManager instance] enrolledAccount]?NO:YES;
+}
+
 @end

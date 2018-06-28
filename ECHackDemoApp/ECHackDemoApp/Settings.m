@@ -10,7 +10,7 @@
 static unsigned int hourlyWage; //in cents
 static NSString *workerName = @"John Doe";
 static NSString *workerEmail = @"john@contoso.com";
-static NSString *workerPhone = @"(123) 456-7890";
+static NSString *workerPhone = @"(123)456-7890";
 
 @implementation Settings
 

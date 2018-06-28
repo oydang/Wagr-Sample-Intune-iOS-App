@@ -20,12 +20,8 @@
 	<string>1</string>
 	<key>IntuneMAMSettings</key>
 	<dict>
-		<key>AutoEnrollOnLaunch</key>
-		<false/>
 		<key>DebugSettingsEnabled</key>
 		<true/>
-		<key>MAMPolicyRequired</key>
-		<false/>
 		<key>MainStoryboardFile</key>
 		<string>Main</string>
 		<key>MainStoryboardFile~ipad</key>
@@ -37,7 +33,7 @@
 		<string>https-intunemam</string>
 	</array>
 	<key>NSContactsUsageDescription</key>
-	<string>Wagr needs to access your contacts in order to export this wage worker's data to your iOS Contacts app.</string>
+	<string>Wagr needs to access your contacts in order to export this wage worker&apos;s data to your iOS Contacts app.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
