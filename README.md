@@ -1,18 +1,16 @@
 # Wagr
-Wagr is an Open Source Microsoft App built for iOS to help explore and test the capabilities of the Intune App Wrapping Tool. 
 
-## Getting Started ##
-You'll need a few things before you're able to try out Intune on iOS. To build the app, you'll need the following:
+Wagr is an open source Microsoft app that integrates Azure Active Directory Authentication Libraries (ADAL) and the [Intune App SDK for iOS](https://docs.microsoft.com/en-us/intune/app-sdk-get-started). Wagr is intended to be sample code for app developers integrating the Intune App SDK for iOS into their productivity apps for iOS using [the developer guide](https://docs.microsoft.com/en-us/intune/app-sdk-ios).
+
+## Get Started
+
+You'll need a few things to run the Wagr app with the Intune SDK for iOS. To build the app, you'll need the following:
 
 * A Mac running OS X 10.8.5 or later
-* XCode 6 or later
-* An Apple Signing Certificate and Provisioning Profile for your company. You can learn more about obtaining these [here](http://blogs.technet.com/b/microsoftintune/archive/2015/02/25/how-to-obtain-the-prerequisites-for-the-intune-app-wrapping-tool-for-ios.aspx)
+* XCode 8 or later
+* If you want to test Wagr on physical devices, you'll need an Apple Signing Certificate and Provisioning Profile for your company. You can learn more about obtaining these [here](https://docs.microsoft.com/en-us/intune/app-wrapper-prepare-ios#apple-developer-prerequisites-for-the-app-wrapping-tool).
 
-## Running the App Wrapping Tool ##
-You'll also need to meet some requirements for running the tool on the iOS App:
+## Icons
 
-* The app must be signed by your company with the credentials obtained above
-* You must download the Intune App Wrapping Tool for iOS [here](http://www.microsoft.com/en-us/download/details.aspx?id=45218)
-
-For more detailed instructions on running the App Wrapping Tool, click [here](https://technet.microsoft.com/en-us/library/Dn878028.aspx).
+App icons from [icons8.com](http://icons8.com/).
 

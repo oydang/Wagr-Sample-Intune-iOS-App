@@ -2,12 +2,13 @@
 //  SettingsViewController.m
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import "SettingsViewController.h"
-#import "ViewController.h"
+#import "ClockInViewController.h"
 #import "Settings.h"
+#import <IntuneMAM/IntuneMAMEnrollmentManager.h>
 
 @interface SettingsViewController ()
 
@@ -15,56 +16,82 @@
 
 @implementation SettingsViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                           action:@selector(dismissKeyboard)];
+    
+    self.emailTextField.delegate = self;
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
+    
+}
+         
+- (void)viewDidAppear:(BOOL)animated
+{
+    if([[IntuneMAMEnrollmentManager instance] enrolledAccount])
+    {
+        [Settings setWorkerEmail:[[IntuneMAMEnrollmentManager instance] enrolledAccount]];
+        [self.emailTextField setText:[Settings workerEmail]]; // The only setting that could have changed
+    }
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)onLinkPressed:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://technet.microsoft.com/library/dn878028.aspx"]];
+- (IBAction)onNameEntered:(UITextField *)sender
+{
+    [Settings setWorkerName:self.nameTextField.text];
 }
 
-- (IBAction)onDollarsWageEntered:(UITextField *)sender {
-    dollarsInCents = [self.dollarWage.text intValue] * 100;
-    if ((cents >= 0)&& (dollarsInCents >= 0)) {
-        hourlyWage = dollarsInCents + cents;
-        [Settings setHourlyWage:hourlyWage];
-    }
+
+- (IBAction)onDollarsWageEntered:(UITextField *)sender
+{
+    unsigned int dollarsInCents = [self.dollarWageTextField.text intValue] * 100;
+    unsigned int hourlyWage = dollarsInCents + [self.centsWageTextField.text intValue];
+    [Settings setHourlyWage:hourlyWage];
     NSLog(@"Hourly Wage: %d", hourlyWage);
 }
 
-- (IBAction)onCentsWageEntered:(UITextField *)sender {
-    cents = [self.centsWage.text intValue];
-    if ((cents >= 0)&& (dollarsInCents >= 0)) {
-        hourlyWage = dollarsInCents + cents;
-        [Settings setHourlyWage:hourlyWage];
-    }
+- (IBAction)onCentsWageEntered:(UITextField *)sender
+{
+    unsigned int cents = [self.centsWageTextField.text intValue];
+    unsigned int hourlyWage = ([self.dollarWageTextField.text intValue] * 100) + cents;
+    [Settings setHourlyWage:hourlyWage];
     NSLog(@"Hourly Wage: %d", hourlyWage);
 }
 
--(void)dismissKeyboard {
-    [self.userName resignFirstResponder];
-    [self.dollarWage resignFirstResponder];
-    [self.centsWage resignFirstResponder];
+- (IBAction)onEmailEntered:(UITextField *)sender
+{
+    [Settings setWorkerEmail:self.emailTextField.text];
 }
+
+- (IBAction)onPhoneEntered:(UITextField *)sender
+{
+    [Settings setWorkerPhone:self.phoneTextField.text];
+}
+
+-(void)dismissKeyboard
+{
+    [self.nameTextField resignFirstResponder];
+    [self.dollarWageTextField resignFirstResponder];
+    [self.centsWageTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+    [self.phoneTextField resignFirstResponder];
+}
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return [[IntuneMAMEnrollmentManager instance] enrolledAccount]?NO:YES;
+}
+
 @end

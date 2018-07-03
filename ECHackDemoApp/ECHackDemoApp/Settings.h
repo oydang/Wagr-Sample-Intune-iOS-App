@@ -2,13 +2,23 @@
 //  Settings.h
 //  Wagr
 //
-//  Copyright (c) 2015 Microsoft. All rights reserved.
+//  Copyright © Microsoft. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface Settings : NSObject
     
-+(int)hourlyWage;
-+(void)setHourlyWage: (int) wage;
++ (unsigned int)hourlyWage;
++ (void)setHourlyWage:(unsigned int)wage;
+
++ (NSString*)workerName;
++ (void)setWorkerName:(NSString*)name;
+
++ (NSString*)workerEmail;
++ (void)setWorkerEmail:(NSString*)email;
+
++ (NSString*) workerPhone;
++ (void)setWorkerPhone:(NSString*)phone;
+
 @end
