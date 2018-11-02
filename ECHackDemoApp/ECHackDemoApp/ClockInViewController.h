@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CalendarData.h"
-#import <IntuneMAMWalledGarden/IntuneMAM.h>
+#import <IntuneMAM/IntuneMAM.h>
 
 @interface ClockInViewController : UIViewController {
     NSTimeInterval pauseTimeInterval;
