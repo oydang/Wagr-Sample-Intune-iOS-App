@@ -9,6 +9,6 @@
 
 @interface DateUtility : NSObject
 
-+ (unsigned int)daysBetweenDate:(NSDate*)fromDateTime andDate:(NSDate*)toDateTime;
++ (unsigned int)daysBetweenDate:(NSDate *)fromDateTime andDate:(NSDate *)toDateTime;
 
 @end

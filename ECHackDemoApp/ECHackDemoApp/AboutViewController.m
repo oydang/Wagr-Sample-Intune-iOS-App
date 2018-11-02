@@ -13,18 +13,15 @@
 
 @implementation AboutViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)onAboutLinkPressed:(id)sender
-{
+- (IBAction)onAboutLinkPressed:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://docs.microsoft.com/en-us/intune/app-sdk"]];
 }
 

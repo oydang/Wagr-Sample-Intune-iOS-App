@@ -13,10 +13,15 @@
 @property NSMutableDictionary *calendarDictionary;
 
 - (void)loadCalendarData;
-- (void)recordCalendarData:(NSDate*)date wage:(double)wage timeWorked:(NSString*)timeWorked;
+
+- (void)recordCalendarData:(NSDate *)date wage:(double)wage timeWorked:(NSString *)timeWorked;
+
 - (void)saveCalendarData;
-- (UIDocumentInteractionController*)getDocumentInteractionController;
-- (BOOL)saveDataFromFile:(NSString*)filePath;
-- (NSString*)getFileForExport;
+
+- (UIDocumentInteractionController *)getDocumentInteractionController;
+
+- (BOOL)saveDataFromFile:(NSString *)filePath;
+
+- (NSString *)getFileForExport;
 
 @end

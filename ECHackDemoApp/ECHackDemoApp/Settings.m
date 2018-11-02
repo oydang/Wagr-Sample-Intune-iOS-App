@@ -14,46 +14,37 @@ static NSString *workerPhone = @"(123)456-7890";
 
 @implementation Settings
 
-+ (unsigned int)hourlyWage
-{
++ (unsigned int)hourlyWage {
     return hourlyWage;
 }
 
-+ (void)setHourlyWage:(unsigned int)wage
-{
++ (void)setHourlyWage:(unsigned int)wage {
     hourlyWage = wage;
 }
 
-+ (NSString*)workerName
-{
++ (NSString *)workerName {
     return workerName;
 }
 
-+ (void) setWorkerName:(NSString*)name
-{
++ (void)setWorkerName:(NSString *)name {
     workerName = name;
 }
 
-+ (NSString*)workerEmail
-{
++ (NSString *)workerEmail {
     return workerEmail;
 }
 
-+ (void)setWorkerEmail:(NSString *)email
-{
++ (void)setWorkerEmail:(NSString *)email {
     workerEmail = email;
 }
 
-+ (NSString*)workerPhone
-{
++ (NSString *)workerPhone {
     return workerPhone;
 }
 
-+ (void)setWorkerPhone:(NSString *)phone
-{
++ (void)setWorkerPhone:(NSString *)phone {
     workerPhone = phone;
 }
-
 
 
 @end
